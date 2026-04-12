@@ -1,0 +1,2429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complejo Turístico Baden Baden — Cabañas, departamentos, habitaciones, camping y piscinas en Jardín América, Misiones, Argentina. Más de 28 años de experiencia.">
+  <meta name="theme-color" content="#1A3C2A">
+  <title>Complejo Baden Baden | Jardín América, Misiones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─── VARIABLES ─── */
+    :root {
+      --verde:        #1A3C2A;
+      --verde-med:    #2A5C40;
+      --verde-claro:  #3D7A56;
+      --verde-suave:  #E8F0EB;
+      --dorado:       #C9A84C;
+      --dorado-claro: #F0D98A;
+      --tierra:       #5C3D2E;
+      --crema:        #F7F2EA;
+      --blanco:       #FFFFFF;
+      --gris-1:       #F4F4F2;
+      --gris-2:       #E8E8E4;
+      --gris-3:       #9A9A92;
+      --texto:        #1A1A18;
+      --texto-suave:  #4A4A44;
+      --sombra:       0 4px 24px rgba(0,0,0,.12);
+      --sombra-lg:    0 12px 48px rgba(0,0,0,.18);
+      --radio:        12px;
+      --radio-lg:     20px;
+      --trans:        .28s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', sans-serif; color: var(--texto); background: var(--blanco); line-height: 1.6; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── UTILIDADES ─── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .tag {
+      display: inline-block;
+      background: var(--verde-suave); color: var(--verde-med);
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .tag-gold { background: rgba(201,168,76,.15); color: var(--dorado); }
+    .sec-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; line-height: 1.2; color: var(--verde);
+      margin-bottom: 16px;
+    }
+    .sec-titulo em { font-style: italic; color: var(--dorado); }
+    .sec-sub { font-size: 1.05rem; color: var(--texto-suave); max-width: 560px; line-height: 1.7; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700;
+      padding: 13px 28px; border-radius: 8px; cursor: pointer;
+      transition: all var(--trans); border: none; letter-spacing: .03em;
+    }
+    .btn-primary { background: var(--verde); color: var(--blanco); }
+    .btn-primary:hover { background: var(--verde-med); transform: translateY(-2px); box-shadow: var(--sombra); }
+    .btn-gold { background: var(--dorado); color: var(--blanco); }
+    .btn-gold:hover { background: #b8943e; transform: translateY(-2px); box-shadow: var(--sombra); }
+    .btn-outline { background: transparent; color: var(--verde); border: 2px solid var(--verde); }
+    .btn-outline:hover { background: var(--verde); color: var(--blanco); }
+    .btn-outline-white { background: transparent; color: var(--blanco); border: 2px solid rgba(255,255,255,.6); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); border-color: var(--blanco); }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 14px 0;
+      background: var(--crema);
+      box-shadow: 0 2px 16px rgba(0,0,0,.1);
+      transition: padding var(--trans), box-shadow var(--trans);
+    }
+    .navbar.scrolled {
+      padding: 10px 0; box-shadow: 0 2px 24px rgba(0,0,0,.14);
+    }
+    .navbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .navbar-logo img { height: 44px; width: auto; }
+    .navbar-logo-txt {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--verde);
+      line-height: 1.2;
+    }
+    .navbar-logo-txt span {
+      display: block; font-family: 'Inter', sans-serif;
+      font-size: .65rem; font-weight: 500; opacity: .6; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--texto-suave);
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px; list-style: none;
+    }
+    .nav-links a {
+      color: var(--texto-suave); font-size: 1rem; font-weight: 600;
+      transition: color var(--trans); letter-spacing: .02em;
+    }
+    .nav-links a:hover { color: var(--verde); }
+    .nav-reservar {
+      background: var(--verde); color: var(--blanco) !important;
+      padding: 9px 22px; border-radius: 8px; font-weight: 700 !important;
+    }
+    .nav-reservar:hover { background: var(--verde-med) !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--verde); border-radius: 2px; transition: var(--trans); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--verde);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    /* Lado izquierdo: texto sobre verde sólido */
+    .hero-izq {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 64px 56px 64px 48px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .75rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--dorado);
+      margin-bottom: 18px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 2px; background: var(--dorado); border-radius: 2px;
+    }
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      font-weight: 900; line-height: 1.0; color: var(--blanco);
+      margin-bottom: 20px;
+    }
+    .hero-h1 em { font-style: italic; color: var(--dorado); }
+    .hero-sub {
+      font-size: 1rem; color: rgba(255,255,255,.72);
+      margin-bottom: 32px; max-width: 420px; line-height: 1.75;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero-chips {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px;
+    }
+    .hero-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500;
+    }
+
+    /* Booking bar — sobre fondo verde, sin transparencia */
+    .booking-bar {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radio-lg); padding: 20px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .booking-bar-titulo {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--dorado); margin-bottom: 4px;
+    }
+    .booking-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .booking-field { display: flex; flex-direction: column; gap: 4px; }
+    .booking-field label {
+      font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.6);
+      text-transform: uppercase; letter-spacing: .08em;
+    }
+    .booking-field input, .booking-field select {
+      border: 1.5px solid rgba(255,255,255,.25); border-radius: 8px;
+      padding: 10px 12px; font-size: .88rem; font-family: 'Inter', sans-serif;
+      color: var(--blanco); background: rgba(255,255,255,.1);
+      transition: border-color var(--trans);
+    }
+    .booking-field input::placeholder { color: rgba(255,255,255,.4); }
+    .booking-field select option { color: var(--texto); background: var(--blanco); }
+    .booking-field input:focus, .booking-field select:focus {
+      outline: none; border-color: var(--dorado);
+    }
+    .booking-btn {
+      background: var(--dorado); color: var(--blanco);
+      border: none; border-radius: 8px; padding: 13px;
+      font-size: .9rem; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; width: 100%;
+      transition: background var(--trans), transform var(--trans);
+      letter-spacing: .03em;
+    }
+    .booking-btn:hover { background: #b8943e; transform: translateY(-1px); }
+
+    /* Lado derecho: galería de imágenes */
+    .hero-der {
+      position: relative; overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 80px 32px 32px 8px;
+    }
+    .hero-foto {
+      border-radius: 14px; overflow: hidden;
+      position: relative;
+    }
+    .hero-foto img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .hero-foto-grande {
+      grid-row: span 2;
+      border-radius: 20px;
+    }
+    .hero-foto-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(26,60,42,.9); backdrop-filter: blur(4px);
+      color: var(--blanco); font-size: .72rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    /* ─── STATS STRIP ─── */
+    .stats-strip {
+      background: var(--verde); padding: 28px 0;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+    }
+    .stat-item {
+      text-align: center; padding: 8px 16px;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 900; color: var(--dorado-claro);
+      line-height: 1.1; display: block;
+    }
+    .stat-label {
+      font-size: .82rem; color: rgba(255,255,255,.72);
+      font-weight: 500; display: block; margin-top: 2px;
+    }
+
+    /* ─── ALOJAMIENTOS ─── */
+    .alojamientos { padding: 56px 0; background: var(--crema); }
+    .aloj-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 24px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .aloj-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .aloj-tab {
+      padding: 9px 22px; border-radius: 100px; border: 2px solid var(--gris-2);
+      font-size: .85rem; font-weight: 600; cursor: pointer;
+      background: var(--blanco); color: var(--texto-suave);
+      transition: all var(--trans);
+    }
+    .aloj-tab.active, .aloj-tab:hover {
+      background: var(--verde); color: var(--blanco); border-color: var(--verde);
+    }
+    .aloj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .aloj-panel { display: none; }
+    .aloj-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; }
+    .aloj-card {
+      background: var(--blanco); border-radius: var(--radio-lg);
+      overflow: hidden; box-shadow: var(--sombra);
+      transition: transform var(--trans), box-shadow var(--trans);
+      display: flex; flex-direction: column;
+    }
+    .aloj-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-lg); }
+    .aloj-foto {
+      height: 200px; overflow: hidden; position: relative;
+    }
+    .aloj-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .aloj-card:hover .aloj-foto img { transform: scale(1.05); }
+    .aloj-precio-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--verde); color: var(--blanco);
+      font-size: .78rem; font-weight: 700; padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .aloj-body { padding: 20px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+    .aloj-tipo {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--verde-claro); margin-bottom: 4px;
+    }
+    .aloj-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--verde);
+      margin-bottom: 8px; line-height: 1.2;
+    }
+    .aloj-desc { font-size: .87rem; color: var(--texto-suave); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    .aloj-amenities { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .amenity {
+      display: flex; align-items: center; gap: 4px;
+      font-size: .75rem; font-weight: 600; color: var(--texto-suave);
+      background: var(--gris-1); padding: 4px 10px; border-radius: 100px;
+    }
+    .aloj-precio {
+      display: flex; align-items: baseline; gap: 4px;
+      padding-top: 16px; border-top: 1px solid var(--gris-2);
+    }
+    .precio-monto {
+      font-size: 1.5rem; font-weight: 700; color: var(--verde);
+      font-family: 'Playfair Display', serif;
+    }
+    .precio-unidad { font-size: .8rem; color: var(--gris-3); }
+    .precio-reservar {
+      margin-left: auto; background: var(--dorado); color: var(--blanco);
+      border: none; border-radius: 8px; padding: 8px 18px;
+      font-size: .82rem; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; transition: background var(--trans);
+    }
+    .precio-reservar:hover { background: #b8943e; }
+
+    /* ─── CHECKIN STRIP ─── */
+    .checkin-strip {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .checkin-box {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--verde-suave); border: 1px solid rgba(42,92,64,.2);
+      border-radius: 10px; padding: 10px 18px; flex: 1; min-width: 160px;
+    }
+    .checkin-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .checkin-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--verde-claro); }
+    .checkin-val { font-size: 1rem; font-weight: 700; color: var(--verde); }
+    .checkin-box.gold { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.3); }
+    .checkin-box.gold .checkin-label { color: var(--dorado); }
+    .checkin-box.gold .checkin-val { color: var(--tierra); }
+    .politica-nota {
+      background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.3);
+      border-radius: 10px; padding: 14px 18px; margin-bottom: 28px;
+      font-size: .83rem; color: var(--texto-suave); line-height: 1.6;
+    }
+    .politica-nota strong { color: var(--verde); }
+
+    /* ─── ALOJ EXTRAS ─── */
+    .aloj-nota {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.35);
+      color: var(--tierra); font-size: .82rem; font-weight: 500;
+      padding: 10px 16px; border-radius: 8px; margin-top: 16px; flex-wrap: wrap;
+    }
+    .aloj-cap-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(0,0,0,.58); backdrop-filter: blur(4px);
+      color: #fff; font-size: .72rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .comparador { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--gris-2); overflow-x: auto; }
+    .comparador-titulo {
+      font-size: .78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--verde-claro); margin-bottom: 8px;
+    }
+    .comparador-h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem;
+      font-weight: 700; color: var(--verde); margin-bottom: 28px;
+    }
+    .comparador-table {
+      width: 100%; border-collapse: collapse; font-size: .85rem;
+      background: var(--blanco); border-radius: var(--radio-lg);
+      overflow: hidden; box-shadow: var(--sombra);
+    }
+    .comparador-table th {
+      background: var(--verde); color: var(--blanco);
+      padding: 14px 18px; text-align: left; font-weight: 700; font-size: .82rem;
+    }
+    .comparador-table td {
+      padding: 13px 18px; border-bottom: 1px solid var(--gris-2);
+      color: var(--texto-suave); vertical-align: middle;
+    }
+    .comparador-table tr:last-child td { border-bottom: none; }
+    .comparador-table tr:nth-child(even) td { background: var(--gris-1); }
+    .comparador-table td:first-child { font-weight: 600; color: var(--texto); }
+    .comp-si { color: #2A5C40; font-weight: 700; }
+    .comp-no { color: var(--gris-3); }
+    .comp-parcial { color: var(--dorado); font-weight: 600; }
+
+    /* ─── INSTALACIONES ─── */
+    .instalaciones { padding: 56px 0; background: var(--blanco); }
+    .inst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; }
+    .inst-card {
+      background: var(--crema); border-radius: var(--radio-lg);
+      overflow: hidden; position: relative;
+    }
+    .inst-foto { height: 240px; overflow: hidden; }
+    .inst-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .inst-card:hover .inst-foto img { transform: scale(1.06); }
+    .inst-body { padding: 22px 24px 26px; }
+    .inst-ico { font-size: 2rem; margin-bottom: 10px; }
+    .inst-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--verde); margin-bottom: 8px;
+    }
+    .inst-desc { font-size: .88rem; color: var(--texto-suave); line-height: 1.65; }
+
+    /* ─── TURISMO ESTUDIANTIL ─── */
+    .estudiantil {
+      padding: 56px 0;
+      background: var(--verde);
+      position: relative; overflow: hidden;
+    }
+    .estudiantil::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home3.jpg") center/cover no-repeat;
+      opacity: .12;
+    }
+    .est-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 28px; position: relative; }
+    .est-intro-txt { }
+    .est-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 20px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dorado-claro);
+    }
+    .est-highlights { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .est-hl {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px; padding: 12px 16px; font-size: .9rem; color: rgba(255,255,255,.85);
+    }
+    .est-hl-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .est-callout {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radio-lg); padding: 32px 28px;
+    }
+    .est-callout-titulo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dorado-claro); margin-bottom: 12px; }
+    .est-callout p { font-size: .92rem; color: rgba(255,255,255,.78); line-height: 1.7; margin-bottom: 20px; }
+    .est-callout-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--dorado); color: white; font-size: .9rem; font-weight: 700; padding: 12px 24px; border-radius: 8px; transition: background var(--trans); cursor: pointer; border: none; }
+    .est-callout-btn:hover { background: #b8943e; }
+    .act-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 0; position: relative; }
+    .act-card {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radio-lg); padding: 28px 24px;
+      backdrop-filter: blur(4px);
+      transition: background var(--trans), transform var(--trans);
+    }
+    .act-card:hover { background: rgba(255,255,255,.14); transform: translateY(-4px); }
+    .act-ico { font-size: 2.5rem; margin-bottom: 14px; }
+
+    /* ─── MINI REEL ESTUDIANTIL ─── */
+    .est-right-col { display: flex; flex-direction: column; gap: 16px; }
+    .mini-reel { position: relative; }
+    .mini-reel-wrapper {
+      position: relative; overflow: hidden;
+      border-radius: var(--radio-lg);
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+    .mini-reel-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+    .mini-reel-slide { min-width: 100%; position: relative; }
+    .mini-reel-slide img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+    }
+    .mini-reel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(0,0,0,.45); backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,.25); color: var(--blanco);
+      font-size: .9rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      transition: background var(--trans); z-index: 10; padding: 0;
+    }
+    .mini-reel-btn:hover { background: rgba(0,0,0,.7); }
+    .mini-reel-btn.prev { left: 10px; }
+    .mini-reel-btn.next { right: 10px; }
+    .mini-reel-btn:disabled { opacity: 0; pointer-events: none; }
+    .mini-reel-dots {
+      display: flex; justify-content: center; gap: 6px; margin-top: 10px;
+    }
+    .mini-reel-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,.25); border: none; cursor: pointer;
+      transition: background var(--trans), transform var(--trans); padding: 0;
+    }
+    .mini-reel-dot.active { background: var(--dorado); transform: scale(1.25); }
+
+    /* STATS STRIP */
+    .est-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 48px; position: relative; }
+    .est-stat { text-align: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radio-lg); padding: 28px 16px; }
+    .est-stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--dorado-claro); line-height: 1; margin-bottom: 8px; }
+    .est-stat-label { font-size: .75rem; color: rgba(255,255,255,.62); text-transform: uppercase; letter-spacing: .09em; }
+    /* CALLOUT extras */
+    .est-callout { border: 1px solid rgba(255,211,74,.35); }
+    .est-callout-tag { display: inline-block; background: var(--dorado); color: white; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
+    .est-callout-urgencia { background: rgba(255,255,255,.07); border-left: 3px solid var(--dorado); border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: .82rem; color: rgba(255,255,255,.82); margin: 4px 0 18px; line-height: 1.5; }
+    /* Subtítulo del grid */
+    .est-paquete-hdr { text-align: center; margin: 44px 0 24px; position: relative; }
+    .est-paquete-hdr h3 { font-family: 'Playfair Display', serif; font-size: 1.75rem; color: var(--blanco); margin-bottom: 6px; }
+    .est-paquete-hdr p { font-size: .9rem; color: rgba(255,255,255,.6); }
+    /* CTA final */
+    .est-cta-final { background: rgba(255,211,74,.08); border: 1px solid rgba(255,211,74,.3); border-radius: var(--radio-lg); padding: 44px 32px; text-align: center; margin-top: 44px; position: relative; }
+    .est-cta-final-eyebrow { font-size: .75rem; color: var(--dorado-claro); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 12px; }
+    .est-cta-final h3 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--blanco); margin-bottom: 8px; line-height: 1.25; }
+    .est-cta-final-sub { font-size: .92rem; color: rgba(255,255,255,.62); margin-bottom: 28px; }
+    .est-cta-final-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .est-btn-wa { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: white; font-size: .95rem; font-weight: 700; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: background var(--trans); }
+    .est-btn-wa:hover { background: #1ebe5d; }
+    .est-btn-sec { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: var(--blanco); font-size: .92rem; font-weight: 600; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: background var(--trans); }
+    .est-btn-sec:hover { background: rgba(255,255,255,.18); }
+
+    .act-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--blanco);
+      margin-bottom: 8px;
+    }
+    .act-desc { font-size: .87rem; color: rgba(255,255,255,.72); line-height: 1.65; }
+
+    /* ─── TARIFAS ─── */
+    .tarifas { padding: 56px 0; background: var(--gris-1); }
+    .tarifas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+    .tarifa-card {
+      background: var(--blanco); border-radius: var(--radio-lg);
+      padding: 32px; box-shadow: var(--sombra);
+    }
+    .tarifa-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--verde);
+      margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 2px solid var(--gris-2);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .tarifa-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid var(--gris-2);
+      font-size: .9rem;
+    }
+    .tarifa-row:last-child { border-bottom: none; }
+    .tarifa-nombre { color: var(--texto-suave); font-weight: 500; }
+    .tarifa-precio { font-weight: 700; color: var(--verde); font-size: 1rem; }
+    .tarifa-nota {
+      margin-top: 16px; padding: 12px 16px;
+      background: var(--verde-suave); border-radius: 8px;
+      font-size: .8rem; color: var(--verde-med); line-height: 1.5;
+    }
+
+    /* ─── PAQUETES ─── */
+    .paquetes { padding: 48px 0; background: var(--blanco); }
+    .paquetes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 28px; }
+    .paquete-card { border: 1.5px solid var(--gris-1); border-radius: var(--radio-lg); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; transition: box-shadow var(--trans), transform var(--trans); }
+    .paquete-card:hover { box-shadow: var(--sombra-lg); transform: translateY(-3px); }
+    .paquete-card.destacado { border-color: var(--verde); }
+    .paquete-ico { font-size: 1.9rem; }
+    .paquete-nombre { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--verde); }
+    .paquete-items { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .paquete-items li { font-size: .84rem; color: var(--texto-suave); display: flex; align-items: flex-start; gap: 7px; line-height: 1.45; }
+    .paquete-items li::before { content: '✓'; color: var(--verde); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .paquete-precio { font-size: .79rem; color: var(--texto-suave); margin-top: 2px; font-style: italic; }
+    .paquete-btn { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--verde); color: white; font-size: .87rem; font-weight: 700; padding: 10px 18px; border-radius: 8px; text-decoration: none; transition: background var(--trans); }
+    .paquete-btn:hover { opacity: .88; }
+    .paquete-card.destacado .paquete-btn { background: var(--dorado); }
+    /* Promo 3x2 */
+    .promo-strip {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--verde) 0%, #2a5c3a 100%);
+      border-radius: var(--radio-lg); padding: 18px 24px; margin-bottom: 28px;
+      border: 1.5px solid rgba(255,211,74,.35);
+    }
+    .promo-strip-badge {
+      background: var(--dorado); color: white;
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+      padding: 6px 16px; border-radius: 8px; white-space: nowrap; flex-shrink: 0;
+    }
+    .promo-strip-txt { flex: 1; min-width: 180px; }
+    .promo-strip-titulo { font-weight: 700; color: var(--blanco); font-size: 1rem; margin-bottom: 3px; }
+    .promo-strip-cond { font-size: .78rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+    .paquete-card.promo { border-color: var(--dorado); position: relative; overflow: hidden; }
+    .paquete-card.promo::before {
+      content: '3×2'; position: absolute; top: 14px; right: -20px;
+      background: var(--dorado); color: white; font-size: .72rem; font-weight: 800;
+      letter-spacing: .05em; padding: 4px 28px; transform: rotate(35deg);
+    }
+    .paquete-precio-bloque { margin-top: 4px; }
+    .paquete-precio-original { font-size: .78rem; color: #aaa; text-decoration: line-through; }
+    .paquete-precio-promo { font-size: 1.3rem; font-weight: 800; color: var(--verde); line-height: 1.2; }
+    .paquete-precio-promo span { font-size: .78rem; font-weight: 400; color: var(--texto-suave); }
+    .paquete-ahorro { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; margin-top: 4px; }
+
+    /* ─── BANNER JARDÍN AMÉRICA TURISMO ─── */
+    .banner-ja {
+      padding: 40px 0; background: var(--verde);
+      position: relative; overflow: hidden;
+    }
+    .banner-ja::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home3.jpg") center/cover no-repeat;
+      opacity: .08;
+    }
+    .banner-ja-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px; position: relative; flex-wrap: wrap;
+    }
+    .banner-ja-txt { flex: 1; min-width: 240px; }
+    .banner-ja-eyebrow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--dorado-claro); margin-bottom: 8px; }
+    .banner-ja-titulo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--blanco); margin-bottom: 6px; line-height: 1.25; }
+    .banner-ja-sub { font-size: .88rem; color: rgba(255,255,255,.68); line-height: 1.6; }
+    .banner-ja-btn {
+      display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0;
+      background: var(--dorado); color: white;
+      font-size: .92rem; font-weight: 700; padding: 14px 28px;
+      border-radius: 10px; text-decoration: none;
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+    .banner-ja-btn:hover { background: #b8943e; transform: translateY(-2px); }
+
+    /* ─── RESTAURANTE ─── */
+    .restaurante {
+      padding: 56px 0; background: #fff;
+    }
+    .rest-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 28px; }
+    .rest-foto { border-radius: var(--radio-lg); overflow: hidden; box-shadow: var(--sombra-lg); }
+    .rest-foto img { width: 100%; height: 420px; object-fit: cover; }
+    .rest-info { display: flex; flex-direction: column; gap: 20px; }
+    .rest-feature { display: flex; align-items: flex-start; gap: 16px; }
+    .rest-feature-ico {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--verde); display: flex; align-items: center;
+      justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+    }
+    .rest-feature-body h4 {
+      font-weight: 700; color: var(--verde); margin-bottom: 4px; font-size: .95rem;
+    }
+    .rest-feature-body p { font-size: .87rem; color: var(--texto-suave); line-height: 1.6; }
+
+    /* ─── GALERÍA ─── */
+    .galeria { padding: 56px 0; background: var(--blanco); }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 12px; margin-top: 28px;
+    }
+    .galeria-item {
+      overflow: hidden; border-radius: var(--radio); cursor: pointer; position: relative;
+    }
+    .galeria-item:first-child {
+      grid-column: span 2; grid-row: span 2;
+    }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .galeria-item:hover img { transform: scale(1.07); }
+    .galeria-overlay {
+      position: absolute; inset: 0;
+      background: rgba(26,60,42,.0); display: flex; align-items: center; justify-content: center;
+      transition: background var(--trans);
+    }
+    .galeria-item:hover .galeria-overlay { background: rgba(26,60,42,.4); }
+    .galeria-overlay span { font-size: 2rem; opacity: 0; transition: opacity var(--trans); }
+    .galeria-item:hover .galeria-overlay span { opacity: 1; }
+
+    /* ─── UBICACIÓN ─── */
+    .ubicacion { padding: 56px 0; background: var(--crema); }
+    .ubic-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; margin-top: 28px; }
+    .ubic-info { display: flex; flex-direction: column; gap: 20px; }
+    .ubic-item { display: flex; gap: 16px; align-items: flex-start; }
+    .ubic-ico {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--verde-suave); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+    }
+    .ubic-item h4 { font-weight: 700; color: var(--verde); margin-bottom: 3px; font-size: .95rem; }
+    .ubic-item p { font-size: .87rem; color: var(--texto-suave); line-height: 1.6; }
+    .mapa-embed {
+      border-radius: var(--radio-lg); overflow: hidden;
+      box-shadow: var(--sombra-lg); height: 360px;
+    }
+    .mapa-embed iframe { width: 100%; height: 100%; border: none; }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 56px 0; background: var(--blanco); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .faq-item {
+      border: 1.5px solid var(--gris-2); border-radius: var(--radio);
+      overflow: hidden; transition: border-color var(--trans);
+    }
+    .faq-item.open { border-color: var(--verde); }
+    .faq-pregunta {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 18px 20px; background: none; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif; font-size: .92rem; font-weight: 600;
+      color: var(--texto); text-align: left;
+      transition: background var(--trans);
+    }
+    .faq-pregunta:hover { background: var(--gris-1); }
+    .faq-item.open .faq-pregunta { color: var(--verde); background: var(--verde-suave); }
+    .faq-icono { font-size: 1.1rem; flex-shrink: 0; transition: transform var(--trans); }
+    .faq-item.open .faq-icono { transform: rotate(45deg); }
+    .faq-respuesta {
+      padding: 0 20px; max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      font-size: .88rem; color: var(--texto-suave); line-height: 1.7;
+    }
+    .faq-item.open .faq-respuesta { max-height: 300px; padding: 0 20px 18px; }
+
+    /* ─── CONTACTO ─── */
+    .contacto { padding: 56px 0; background: var(--verde); }
+    .contacto-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .contacto-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: var(--blanco); margin-bottom: 16px; line-height: 1.2;
+    }
+    .contacto-info h2 em { font-style: italic; color: var(--dorado-claro); }
+    .contacto-info p { color: rgba(255,255,255,.72); font-size: .95rem; line-height: 1.7; margin-bottom: 32px; }
+    .contacto-items { display: flex; flex-direction: column; gap: 16px; }
+    .contacto-item {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,.08); border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .contacto-ico { font-size: 1.3rem; }
+    .contacto-item-body { }
+    .contacto-item-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--dorado-claro); margin-bottom: 2px; }
+    .contacto-item-val { font-size: .92rem; color: var(--blanco); font-weight: 500; }
+
+    .contacto-form {
+      background: var(--blanco); border-radius: var(--radio-lg);
+      padding: 36px; box-shadow: var(--sombra-lg);
+    }
+    .form-titulo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--verde); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: .8rem; font-weight: 700; color: var(--verde); text-transform: uppercase; letter-spacing: .06em; }
+    .form-group input, .form-group select, .form-group textarea {
+      border: 1.5px solid var(--gris-2); border-radius: 8px;
+      padding: 11px 14px; font-size: .9rem; font-family: 'Inter', sans-serif;
+      color: var(--texto); background: var(--blanco); resize: vertical;
+      transition: border-color var(--trans);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--verde);
+    }
+    .form-submit {
+      width: 100%; background: var(--verde); color: var(--blanco);
+      border: none; border-radius: 8px; padding: 14px;
+      font-size: .95rem; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; transition: background var(--trans);
+    }
+    .form-submit:hover { background: var(--verde-med); }
+    .form-nota { font-size: .75rem; color: var(--gris-3); margin-top: 10px; text-align: center; }
+
+    /* ─── FOOTER ─── */
+    .footer { background: var(--crema); color: var(--texto-suave); padding: 48px 0 28px; border-top: 2px solid var(--gris-2); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.7; margin-top: 12px; max-width: 260px; color: var(--texto-suave); }
+    .footer-logo img { height: 48px; }
+    .footer-logo-txt { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--verde); margin-top: 4px; }
+    .footer-col h4 { font-size: .85rem; font-weight: 700; color: var(--verde); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: .85rem; color: var(--texto-suave); transition: color var(--trans); }
+    .footer-col ul li a:hover { color: var(--verde); }
+    .footer-redes { display: flex; gap: 10px; margin-top: 16px; }
+    .red-ico {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--gris-2); display: flex; align-items: center; justify-content: center;
+      transition: background var(--trans);
+    }
+    .red-ico:hover { background: var(--verde); }
+    .red-ico svg { width: 16px; height: 16px; fill: var(--verde); transition: fill var(--trans); }
+    .red-ico:hover svg { fill: white; }
+    .footer-bottom {
+      border-top: 1px solid var(--gris-2); padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .8rem; flex-wrap: wrap; gap: 8px; color: var(--gris-3);
+    }
+    .footer-bottom a { color: var(--verde); font-weight: 600; }
+
+    /* ─── MODAL PROMO ─── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(10,30,18,.75); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s ease;
+    }
+    .modal-overlay.visible { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--blanco); border-radius: var(--radio-lg);
+      max-width: 520px; width: 100%;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+      overflow: hidden;
+      transform: translateY(24px) scale(.97);
+      transition: transform .35s ease;
+      position: relative;
+    }
+    .modal-overlay.visible .modal-box { transform: translateY(0) scale(1); }
+    .modal-header {
+      background: linear-gradient(135deg, var(--verde) 0%, #2a5c3a 100%);
+      padding: 28px 28px 22px; position: relative; text-align: center;
+    }
+    .modal-badge {
+      display: inline-block; background: var(--dorado); color: white;
+      font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700;
+      padding: 6px 22px; border-radius: 10px; margin-bottom: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.2);
+    }
+    .modal-titulo {
+      font-family: 'Playfair Display', serif; font-size: 1.45rem;
+      color: var(--blanco); line-height: 1.25; margin-bottom: 6px;
+    }
+    .modal-subtitulo { font-size: .84rem; color: rgba(255,255,255,.72); line-height: 1.5; }
+    .modal-close {
+      position: absolute; top: 14px; right: 16px;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      color: white; width: 32px; height: 32px; border-radius: 50%;
+      font-size: 1.1rem; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--trans);
+    }
+    .modal-close:hover { background: rgba(255,255,255,.3); }
+    .modal-body { padding: 24px 28px; }
+    .modal-combos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+    .modal-combo {
+      border: 1.5px solid var(--gris-1); border-radius: var(--radio);
+      padding: 16px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .modal-combo.gold { border-color: var(--dorado); }
+    .modal-combo-ico { font-size: 1.4rem; margin-bottom: 4px; }
+    .modal-combo-nombre { font-weight: 700; font-size: .88rem; color: var(--verde); }
+    .modal-combo-original { font-size: .75rem; color: #aaa; text-decoration: line-through; }
+    .modal-combo-precio { font-size: 1.1rem; font-weight: 800; color: var(--verde); }
+    .modal-combo-precio span { font-size: .72rem; font-weight: 400; color: var(--texto-suave); }
+    .modal-combo-ahorro { font-size: .72rem; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 7px; border-radius: 100px; display: inline-block; margin-top: 2px; }
+    .modal-cond { font-size: .74rem; color: var(--texto-suave); line-height: 1.55; margin-bottom: 18px; text-align: center; }
+    .modal-cta {
+      display: flex; gap: 10px; flex-direction: column;
+    }
+    .modal-btn-wa {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: #25d366; color: white; font-weight: 700; font-size: .92rem;
+      padding: 13px 20px; border-radius: 9px; text-decoration: none;
+      transition: background var(--trans);
+    }
+    .modal-btn-wa:hover { background: #1ebe5d; }
+    .modal-btn-close {
+      background: none; border: 1.5px solid var(--gris-1); color: var(--texto-suave);
+      font-size: .85rem; padding: 11px; border-radius: 9px; cursor: pointer;
+      transition: border-color var(--trans), color var(--trans);
+    }
+    .modal-btn-close:hover { border-color: var(--verde); color: var(--verde); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet grande (≤1024px) */
+    @media (max-width: 1024px) {
+      .container { padding: 0 20px; }
+      .hero-izq { padding: 80px 40px 48px 36px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .est-stats { grid-template-columns: repeat(2,1fr); }
+    }
+
+    /* Tablet (≤960px) */
+    @media (max-width: 960px) {
+      .inst-grid, .act-grid { grid-template-columns: 1fr 1fr; }
+      .paquetes-grid { grid-template-columns: 1fr; }
+      .banner-ja-inner { flex-direction: column; text-align: center; }
+      .banner-ja-titulo { font-size: 1.3rem; }
+      .est-intro { grid-template-columns: 1fr; gap: 28px; }
+      .est-right-col { flex-direction: row; align-items: flex-start; gap: 20px; }
+      .est-callout { flex: 1; }
+      .mini-reel { flex: 1; }
+      .tarifas-grid, .rest-layout, .ubic-layout, .contacto-layout { grid-template-columns: 1fr; }
+      .galeria-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+      .galeria-item:first-child { grid-column: span 2; grid-row: span 1; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .comparador-table { font-size: .78rem; }
+      .comparador-table th, .comparador-table td { padding: 10px 12px; }
+    }
+
+    /* Tablet chica / celular grande (≤768px) */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-izq { padding: 90px 24px 40px; }
+      .hero-der { display: none; }
+      .act-grid { grid-template-columns: 1fr 1fr; }
+      .aloj-tabs { gap: 6px; }
+      .aloj-tab { padding: 8px 14px; font-size: .8rem; }
+      .est-right-col { flex-direction: column; }
+      .mini-reel-slide img { height: 200px; }
+      .rest-fotos { grid-template-columns: 1fr 1fr !important; }
+    }
+
+    /* Móvil (≤640px) */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(26,60,42,.97);
+        justify-content: center; align-items: center;
+        gap: 28px; z-index: 999;
+      }
+      .nav-toggle { display: flex; z-index: 1000; }
+      .inst-grid, .act-grid, .paquetes-grid { grid-template-columns: 1fr; }
+      .booking-row { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .aloj-panel.active { grid-template-columns: 1fr; }
+      .tarifas-grid { grid-template-columns: 1fr; }
+      .comparador-table th:nth-child(n+3),
+      .comparador-table td:nth-child(n+3) { display: none; }
+      .comparador-table th:nth-child(1) { width: 40%; }
+      .mini-reel-slide img { height: 180px; }
+      .est-stats { grid-template-columns: repeat(2,1fr); }
+      .est-cta-final-btns { flex-direction: column; align-items: center; }
+      .est-cta-final h3 { font-size: 1.45rem; }
+    }
+
+    /* Móvil chico (≤400px) */
+    @media (max-width: 400px) {
+      .hero-izq { padding: 80px 16px 32px; }
+      .container { padding: 0 14px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { text-align: center; justify-content: center; }
+      .aloj-tab { padding: 7px 10px; font-size: .75rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar" id="navbar" aria-label="Navegación principal">
+  <div class="container navbar-inner">
+    <a href="#inicio" class="navbar-logo" aria-label="Baden Baden inicio">
+      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/logo-baden.png" alt="Logo Baden Baden" onerror="this.style.display='none'">
+      <div class="navbar-logo-txt">
+        Baden Baden
+        <span>Jardín América · Misiones</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#alojamientos">Alojamientos</a></li>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#estudiantil">Turismo Estudiantil</a></li>
+      <li><a href="#tarifas">Tarifas</a></li>
+      <li><a href="#restaurante">Restaurante</a></li>
+      <li><a href="#contacto" class="nav-reservar">Reservar</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="inicio" aria-label="Inicio">
+
+  <!-- IZQUIERDA: texto sobre verde sólido -->
+  <div class="hero-izq">
+    <p class="hero-eyebrow">Jardín América · Misiones · Ruta Nacional 12</p>
+    <h1 class="hero-h1">Tu refugio en<br>la <em>selva<br>misionera</em></h1>
+    <p class="hero-sub">Cabañas, departamentos, habitaciones y camping en plena naturaleza. Piscinas, toboganes, tirolesa y mucho más sobre la Ruta 12.</p>
+
+    <div class="hero-chips">
+      <span class="hero-chip">🏡 12 cabañas</span>
+      <span class="hero-chip">🏊 Piscinas</span>
+      <span class="hero-chip">🦅 Tirolesa</span>
+      <span class="hero-chip">🐴 Cabalgatas</span>
+      <span class="hero-chip">28+ años</span>
+    </div>
+
+    <div class="booking-bar" role="search" aria-label="Consultar disponibilidad">
+      <p class="booking-bar-titulo">📅 Consultar disponibilidad</p>
+      <div class="booking-row">
+        <div class="booking-field">
+          <label for="checkin">Llegada</label>
+          <input type="date" id="checkin" name="checkin">
+        </div>
+        <div class="booking-field">
+          <label for="checkout">Salida</label>
+          <input type="date" id="checkout" name="checkout">
+        </div>
+      </div>
+      <div class="booking-row">
+        <div class="booking-field">
+          <label for="personas">Personas</label>
+          <select id="personas" name="personas">
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3 personas</option>
+            <option>4 personas</option>
+            <option>5+ personas</option>
+          </select>
+        </div>
+        <div class="booking-field">
+          <label for="tipo-aloj">Tipo</label>
+          <select id="tipo-aloj" name="tipo-aloj">
+            <option>Cualquier tipo</option>
+            <option>Cabaña</option>
+            <option>Departamento</option>
+            <option>Habitación hotel</option>
+            <option>Albergue</option>
+          </select>
+        </div>
+      </div>
+      <button class="booking-btn" onclick="scrollToContact()">Consultar por WhatsApp →</button>
+    </div>
+  </div>
+
+  <!-- DERECHA: grid de fotos contenidas -->
+  <div class="hero-der">
+    <div class="hero-foto hero-foto-grande">
+      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home1.jpg" alt="Complejo Baden Baden — piscinas y naturaleza">
+      <span class="hero-foto-badge">🏊 Piscinas y toboganes</span>
+    </div>
+    <div class="hero-foto">
+      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/cabanas.jpg" alt="Cabañas Baden Baden">
+      <span class="hero-foto-badge">🏡 Cabañas</span>
+    </div>
+    <div class="hero-foto">
+      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home3.jpg" alt="Selva misionera Baden Baden">
+      <span class="hero-foto-badge">🌿 Selva misionera</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="stats-strip" aria-label="Datos del complejo">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">28+</span>
+        <span class="stat-label">Años de trayectoria</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">25+</span>
+        <span class="stat-label">Unidades de alojamiento</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Tipos de alojamiento</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Naturaleza y aventura</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ALOJAMIENTOS ─── -->
+<section class="alojamientos" id="alojamientos" aria-labelledby="aloj-titulo">
+  <div class="container">
+    <div class="aloj-header">
+      <div>
+        <span class="tag">Alojamientos</span>
+        <h2 class="sec-titulo" id="aloj-titulo">Tu espacio en<br><em>plena selva</em></h2>
+        <p class="sec-sub">Todas las unidades llevan nombres de árboles nativos de la selva misionera — una forma de rendir homenaje al monte que nos rodea y recordar que cada especie que da nombre a una cabaña crece a pocos metros de donde vas a dormir. Encontrá la que mejor se adapta a tu grupo.</p>
+      </div>
+    </div>
+
+    <div class="aloj-tabs" role="tablist">
+      <button class="aloj-tab active" onclick="showPanel('cabanas', this)" role="tab">🏡 Cabañas (14)</button>
+      <button class="aloj-tab" onclick="showPanel('deptos', this)" role="tab">🏠 Departamentos (3)</button>
+      <button class="aloj-tab" onclick="showPanel('hotel', this)" role="tab">🛏️ Habitaciones hotel (7)</button>
+      <button class="aloj-tab" onclick="showPanel('albergue', this)" role="tab">👥 Albergue grupal (2)</button>
+    </div>
+
+    <!-- CABAÑAS -->
+    <div class="aloj-panel active" id="panel-cabanas">
+
+      <!-- Alecrin / Marmelero -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/anchico-colorado-300x300.jpg" alt="Cabaña Alecrin / Marmelero" loading="lazy">
+          <span class="aloj-precio-badge">$90.000/noche</span>
+          <span class="aloj-cap-badge">👤 2-3 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña</p>
+          <h3 class="aloj-nombre">Alecrin · Marmelero</h3>
+          <p class="aloj-desc">Ideal para parejas o grupos pequeños. 1 cama matrimonial + 1 cama simple, ropa de cama, baño privado, aire acondicionado, TV con DirecTV, heladera frigobar, cocina y parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 1 matrim. + 1 simple</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ Aire acond.</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🍳 Cocina</span>
+            <span class="amenity">🔥 Parrilla</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$90.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timbó Colorado / Timbó Blanco / Zoita -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Timbo-300x300.jpg" alt="Cabaña Timbó" loading="lazy">
+          <span class="aloj-precio-badge">$110.000/noche</span>
+          <span class="aloj-cap-badge">👥 6 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña tipo Casita</p>
+          <h3 class="aloj-nombre">Timbó Colorado · Timbó Blanco · Zoita</h3>
+          <p class="aloj-desc">Cabaña tipo casita para 6 personas. 1 cama matrimonial + 2 camas cuchetas, ropa de cama, baño privado, aire acondicionado, heladera, TV con DirecTV, cocina, comedor y parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 1 matrim. + 2 cuchetas</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ Aire acond.</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🍳 Cocina + comedor</span>
+            <span class="amenity">🔥 Parrilla</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$110.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Incienso -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/incienso-300x300.jpg" alt="Cabaña Incienso" loading="lazy">
+          <span class="aloj-precio-badge">$140.000/noche</span>
+          <span class="aloj-cap-badge">👥 7 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña tipo Bungalow</p>
+          <h3 class="aloj-nombre">Incienso</h3>
+          <p class="aloj-desc">Bungalow de 2 habitaciones para 7 personas: 1 matrim. + 1 simple en una hab.; 3 simples en la otra; + 1 cama en el living. Ropa de cama, baño privado, A/C en ambas habitaciones, TV DirecTV, cocina, heladera, cochera y parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 2 habitaciones</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ A/C doble</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🍳 Cocina</span>
+            <span class="amenity">🚗 Cochera</span>
+            <span class="amenity">🔥 Parrilla</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$140.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laurel Negro -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Laurel-Negro-10-300x300.jpg" alt="Cabaña Laurel Negro VIP" loading="lazy">
+          <span class="aloj-precio-badge">$165.000/noche</span>
+          <span class="aloj-cap-badge">👥 7 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña VIP</p>
+          <h3 class="aloj-nombre">Laurel Negro</h3>
+          <p class="aloj-desc">Cabaña VIP con 2 dormitorios: 1 matrim. + 1 simple en cada hab., + 1 cama simple en planta baja. Ropa de cama, 2 baños privados, A/C en ambas habitaciones, TV DirecTV, hogar a leña, cocina, heladera, cochera y parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 2 dormitorios</span>
+            <span class="amenity">🚿 2 baños privados</span>
+            <span class="amenity">❄️ A/C doble</span>
+            <span class="amenity">🔥 Hogar a leña</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🚗 Cochera</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$165.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guayubira -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Guayubira-1-300x300.jpg" alt="Cabaña Guayubira" loading="lazy">
+          <span class="aloj-precio-badge">$160.000/noche</span>
+          <span class="aloj-cap-badge">👥 8 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Casa de temporada</p>
+          <h3 class="aloj-nombre">Guayubira</h3>
+          <p class="aloj-desc">Casa para 8 personas con 2 dormitorios separados, cada uno con A/C. Living con 1 cama individual, ropa de cama, cocina, comedor, TV DirecTV, baño privado, galería cubierta y pileta para lavar ropa.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 2 dormitorios</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ A/C doble</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🏡 Galería cubierta</span>
+            <span class="amenity">🍳 Cocina</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$160.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laurel Amarillo -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Laurel-Amarillo-7-300x300.jpg" alt="Cabaña Laurel Amarillo VIP" loading="lazy">
+          <span class="aloj-precio-badge">$185.000/noche</span>
+          <span class="aloj-cap-badge">👥 8 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña VIP</p>
+          <h3 class="aloj-nombre">Laurel Amarillo</h3>
+          <p class="aloj-desc">VIP para 8 personas. 2 dormitorios en planta alta (c/u con 1 matrim. + 1 individual + A/C), 1 baño arriba y 1 abajo, 2 camas individuales abajo, cocina, comedor, living, hogar a leña, TV DirecTV, galería cubierta con parrilla y cochera.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 2 dormitorios + living</span>
+            <span class="amenity">🚿 2 baños privados</span>
+            <span class="amenity">❄️ A/C triple</span>
+            <span class="amenity">🔥 Hogar a leña</span>
+            <span class="amenity">🏡 Galería cubierta</span>
+            <span class="amenity">🚗 Cochera</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$185.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lapachos + Anchico Blanco -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Lapachos-300x300.jpg" alt="Cabañas Lapacho" loading="lazy">
+          <span class="aloj-precio-badge">$120.000/noche</span>
+          <span class="aloj-cap-badge">👥 6 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña estándar tipo Bungalow</p>
+          <h3 class="aloj-nombre">Lapacho Rosa · Lapacho Blanco · Lapacho Negro</h3>
+          <p class="aloj-desc">Bungalows estándar para 6 personas. Baño privado, ropa de cama, aire acondicionado, TV con DirecTV, heladera, cocina completa, comedor con ventilador de techo y parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 6 personas</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ Aire acond.</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🍳 Cocina completa</span>
+            <span class="amenity">🔥 Parrilla</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$120.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grapia -->
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/grapia-300x300.jpg" alt="Cabaña Grapia" loading="lazy">
+          <span class="aloj-precio-badge">$165.000/noche</span>
+          <span class="aloj-cap-badge">👥 8 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Cabaña nueva</p>
+          <h3 class="aloj-nombre">Grapia</h3>
+          <p class="aloj-desc">Cabaña nueva para 8 personas con 3 habitaciones con A/C. 2 habitaciones con cama matrimonial, 1 baño privado, cocina, comedor, living, TV DirecTV, ropa de cama, parrilla y cochera.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 3 habitaciones</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ A/C triple</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🍳 Cocina + comedor</span>
+            <span class="amenity">🚗 Cochera</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$165.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Palo Rosa -->
+      <div class="aloj-card" style="border: 2px solid var(--dorado);">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/Palo-Rosa-300x300.jpg" alt="Cabaña Palo Rosa" loading="lazy">
+          <span class="aloj-precio-badge" style="background:var(--dorado);">⭐ $300.000/noche</span>
+          <span class="aloj-cap-badge">👥 16 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo" style="color:var(--dorado);">Bungalow grande exclusivo</p>
+          <h3 class="aloj-nombre">Palo Rosa</h3>
+          <p class="aloj-desc">Bungalow grande para 16 personas. 4 dormitorios en planta alta con A/C (c/u con 1 matrim. + simples), 1 living, ropa de cama, 3 baños, cocina, comedor, heladera, TV DirecTV, cocheras, parrilla y <strong>piscina privada</strong>. A 300 m de las piscinas del complejo, sobre RN 12.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 4 dormitorios</span>
+            <span class="amenity">🚿 3 baños</span>
+            <span class="amenity">🏊 Piscina privada</span>
+            <span class="amenity">❄️ A/C</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🚗 Cocheras</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$300.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" style="background:var(--dorado);" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPARTAMENTOS -->
+    <div class="aloj-panel" id="panel-deptos">
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/departamentos-300x300.jpg" alt="Departamento Araticú" loading="lazy">
+          <span class="aloj-precio-badge">$110.000/noche</span>
+          <span class="aloj-cap-badge">👥 5 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Departamento</p>
+          <h3 class="aloj-nombre">Araticú</h3>
+          <p class="aloj-desc">Departamento en planta alta para 5 personas. 1 somier matrimonial + 1 cama cucheta + 1 cama individual, ropa de cama, baño privado, aire acondicionado, TV DirecTV, cocina, heladera y terraza con parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ Dormitorio completo</span>
+            <span class="amenity">🍳 Cocina equipada</span>
+            <span class="amenity">📺 Living</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$110.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/departamentos-300x300.jpg" alt="Departamento Ingá" loading="lazy">
+          <span class="aloj-precio-badge">$110.000/noche</span>
+          <span class="aloj-cap-badge">👥 5 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Departamento</p>
+          <h3 class="aloj-nombre">Ingá</h3>
+          <p class="aloj-desc">Departamento en planta alta para 5 personas. 1 somier matrimonial + 1 cama cucheta + 1 cama individual, ropa de cama, baño privado, aire acondicionado, TV DirecTV, cocina, heladera y terraza con parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ Dormitorio completo</span>
+            <span class="amenity">🍳 Cocina equipada</span>
+            <span class="amenity">📺 Living</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$110.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/departamentos-300x300.jpg" alt="Departamento Ñangapiri" loading="lazy">
+          <span class="aloj-precio-badge">$110.000/noche</span>
+          <span class="aloj-cap-badge">👥 5 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Departamento</p>
+          <h3 class="aloj-nombre">Ñangapiri</h3>
+          <p class="aloj-desc">Departamento en planta alta para 5 personas. 1 somier matrimonial + 1 cama cucheta + 1 cama individual, ropa de cama, baño privado, aire acondicionado, TV DirecTV, cocina, heladera y terraza con parrilla.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ Dormitorio completo</span>
+            <span class="amenity">🍳 Cocina equipada</span>
+            <span class="amenity">📺 Living</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$110.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HABITACIONES HOTEL -->
+    <div class="aloj-panel" id="panel-hotel">
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/tipo-hotel-300x300.jpg" alt="Habitación Estándar" loading="lazy">
+          <span class="aloj-precio-badge">$75.000/noche</span>
+          <span class="aloj-cap-badge">👤 1-2 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Habitación tipo Hotel — Estándar</p>
+          <h3 class="aloj-nombre">Araucaria · Espina Corona · Urunday · Curupay</h3>
+          <p class="aloj-desc">Habitación de un ambiente para 4 personas. 1 cama matrimonial + 1 cama cucheta, ropa de cama, baño privado, aire acondicionado, TV con DirecTV y galería con mesa y sillas.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 1 matrim. + cucheta</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ Aire acond.</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🪑 Galería exterior</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$70.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/hotel-frigobar-300x300.jpg" alt="Habitación Superior" loading="lazy">
+          <span class="aloj-precio-badge">$85.000/noche</span>
+          <span class="aloj-cap-badge">👥 1-2 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Habitación tipo Hotel — Superior</p>
+          <h3 class="aloj-nombre">Loro Negro · Cancharana · Cedro Misionero</h3>
+          <p class="aloj-desc">Habitación de un ambiente para 4 personas. 1 cama matrimonial + 2 camas simples, ropa de cama, baño privado, aire acondicionado, TV con DirecTV, galería con mesa y sillas y heladerita tipo frigobar.</p>
+          <div class="aloj-amenities">
+            <span class="amenity">🛏️ 1 matrim. + 2 simples</span>
+            <span class="amenity">🚿 Baño privado</span>
+            <span class="amenity">❄️ Aire acond.</span>
+            <span class="amenity">📺 DirecTV</span>
+            <span class="amenity">🧊 Frigobar</span>
+            <span class="amenity">🪑 Galería exterior</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$80.000</span>
+            <span class="precio-unidad">/ noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALBERGUE -->
+    <div class="aloj-panel" id="panel-albergue">
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/albergues-10-300x300.jpg" alt="Albergue 12 personas" loading="lazy">
+          <span class="aloj-precio-badge">$17.500/persona</span>
+          <span class="aloj-cap-badge">👥 12 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Albergue Grupal</p>
+          <h3 class="aloj-nombre">Albergue × 12 personas</h3>
+          <p class="aloj-desc">Habitación con camas cuchetas para hasta 12 personas. <strong>Sin ropa de cama</strong> — traer sábanas, almohada y manta. Incluye uso de piscinas, toboganes y demás instalaciones del complejo. Mínimo: $70.000/hab. (base 4 personas).</p>
+          <div class="aloj-amenities">
+            <span class="amenity">👥 Hasta 12 personas</span>
+            <span class="amenity">🛏️ Literas</span>
+            <span class="amenity">🚿 Baños compartidos</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$17.500</span>
+            <span class="precio-unidad">/ persona/noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="aloj-card">
+        <div class="aloj-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/albergues-300x300.jpg" alt="Albergue 16 personas" loading="lazy">
+          <span class="aloj-precio-badge">$17.500/persona</span>
+          <span class="aloj-cap-badge">👥 16 personas</span>
+        </div>
+        <div class="aloj-body">
+          <p class="aloj-tipo">Albergue Grupal</p>
+          <h3 class="aloj-nombre">Albergue × 16 personas</h3>
+          <p class="aloj-desc">Habitación con camas cuchetas para hasta 16 personas. <strong>Sin ropa de cama</strong> — traer sábanas, almohada y manta. Incluye uso de piscinas, toboganes y demás instalaciones del complejo. Mínimo: $70.000/hab. (base 4 personas).</p>
+          <div class="aloj-amenities">
+            <span class="amenity">👥 Hasta 16 personas</span>
+            <span class="amenity">🛏️ Literas</span>
+            <span class="amenity">🚿 Baños compartidos</span>
+          </div>
+          <div class="aloj-precio">
+            <span class="precio-monto">$17.500</span>
+            <span class="precio-unidad">/ persona/noche</span>
+            <button class="precio-reservar" onclick="scrollToContact()">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARADOR -->
+    <div class="comparador">
+      <span class="comparador-titulo">¿No sabés cuál elegir?</span>
+      <h3 class="comparador-h2">Compará los tipos de alojamiento</h3>
+      <table class="comparador-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>🏡 Cabañas</th>
+            <th>🏠 Departamentos</th>
+            <th>🛏️ Hab. Hotel</th>
+            <th>👥 Albergue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Precio desde</td>
+            <td>$90.000/noche</td>
+            <td>$110.000/noche</td>
+            <td>$70.000/noche</td>
+            <td>$17.500/persona</td>
+          </tr>
+          <tr>
+            <td>Capacidad</td>
+            <td>2 a 16 personas</td>
+            <td>5 personas</td>
+            <td>4 personas</td>
+            <td>12 a 16 personas</td>
+          </tr>
+          <tr>
+            <td>Cocina propia</td>
+            <td class="comp-si">✔ Completa</td>
+            <td class="comp-si">✔ Completa</td>
+            <td class="comp-no">✗ No incluye</td>
+            <td class="comp-no">✗ No incluye</td>
+          </tr>
+          <tr>
+            <td>Baño privado</td>
+            <td class="comp-si">✔ Privado</td>
+            <td class="comp-si">✔ Privado</td>
+            <td class="comp-si">✔ Privado</td>
+            <td class="comp-parcial">~ Compartido</td>
+          </tr>
+          <tr>
+            <td>Frigobar</td>
+            <td class="comp-no">✗</td>
+            <td class="comp-no">✗</td>
+            <td class="comp-parcial">~ Superior/Premium</td>
+            <td class="comp-no">✗</td>
+          </tr>
+          <tr>
+            <td>Ideal para</td>
+            <td>Familias y grupos</td>
+            <td>Parejas y familias</td>
+            <td>Parejas y viajeros</td>
+            <td>Colegios y grupos</td>
+          </tr>
+          <tr>
+            <td>Privacidad</td>
+            <td class="comp-si">✔ Alta</td>
+            <td class="comp-si">✔ Alta</td>
+            <td class="comp-si">✔ Media-Alta</td>
+            <td class="comp-parcial">~ Compartida</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- POLÍTICAS Y CONDICIONES -->
+    <div class="checkin-strip" style="margin-top:36px;">
+      <div class="checkin-box">
+        <span class="checkin-ico">🕒</span>
+        <div>
+          <div class="checkin-label">Check-in</div>
+          <div class="checkin-val">Desde las 14:00 hs</div>
+        </div>
+      </div>
+      <div class="checkin-box">
+        <span class="checkin-ico">🏁</span>
+        <div>
+          <div class="checkin-label">Check-out</div>
+          <div class="checkin-val">Hasta las 10:00 hs</div>
+        </div>
+      </div>
+      <div class="checkin-box gold">
+        <span class="checkin-ico">💳</span>
+        <div>
+          <div class="checkin-label">Reserva anticipada</div>
+          <div class="checkin-val">50% depósito bancario</div>
+        </div>
+      </div>
+      <div class="checkin-box gold">
+        <span class="checkin-ico">📋</span>
+        <div>
+          <div class="checkin-label">Precios</div>
+          <div class="checkin-val">+ IVA 21% · Temporada 2025–2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="politica-nota" style="margin-top:12px;">
+      <strong>Sin toallas ni desayuno incluidos.</strong> El desayuno puede contratarse en el restaurante del complejo. ·
+      <strong>Ropa de cama:</strong> incluida en cabañas, departamentos y habitaciones hotel. En albergues: traer sábanas, almohada y manta. ·
+      <strong>Huésped adicional:</strong> hasta 1 persona extra por unidad — $17.500/noche, con colchón (sin ropa de cama; traer almohada, sábanas y manta). ·
+      Precios sujetos a modificaciones sin previo aviso.
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── INSTALACIONES ─── -->
+<section class="instalaciones" id="instalaciones" aria-labelledby="inst-titulo">
+  <div class="container">
+    <span class="tag">Instalaciones</span>
+    <h2 class="sec-titulo" id="inst-titulo">Todo lo que <em>necesitás</em></h2>
+    <p class="sec-sub">El complejo cuenta con una amplia infraestructura para que tu estadía sea completa sin salir del predio.</p>
+    <div class="inst-grid">
+      <div class="inst-card">
+        <div class="inst-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home1.jpg" alt="Piscinas Baden Baden" loading="lazy">
+        </div>
+        <div class="inst-body">
+          <div class="inst-ico">🏊</div>
+          <h3 class="inst-nombre">Piscinas & Toboganes</h3>
+          <p class="inst-desc">Múltiples piscinas de diferentes profundidades, ideales para toda la familia. Toboganes acuáticos, reposeras y servicio de guardavidas. Entrada: $7.000 (L-V) · $8.000 (F/S/D).</p>
+        </div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-foto">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/restaurante.jpg" alt="Restaurante Baden Baden" loading="lazy">
+        </div>
+        <div class="inst-body">
+          <div class="inst-ico">🍽️</div>
+          <h3 class="inst-nombre">Restaurante</h3>
+          <p class="inst-desc">Excelente propuesta gastronómica con sabores regionales misioneros. Menú variado para almuerzos y cenas en un entorno único rodeado de verde.</p>
+        </div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-foto">
+          <img src="quincho.jpg" alt="Quincho Baden Baden" loading="lazy">
+        </div>
+        <div class="inst-body">
+          <div class="inst-ico">🔥</div>
+          <h3 class="inst-nombre">Quinchos & Camping</h3>
+          <p class="inst-desc">Quinchos disponibles para grupos y familias ($10.000/día + entrada). Espacios de camping con servicios completos para quienes prefieren vivir la selva más de cerca.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAQUETES ─── -->
+<section class="paquetes" id="paquetes" aria-labelledby="paq-titulo">
+  <div class="container">
+    <span class="tag">Paquetes</span>
+    <h2 class="sec-titulo" id="paq-titulo">Elegí tu <em>escapada ideal</em></h2>
+    <p class="sec-sub">Combos armados para que no tengas que planificar nada — solo llegar y disfrutar.</p>
+
+    <!-- PROMO 3x2 -->
+    <div class="promo-strip">
+      <div class="promo-strip-badge">3×2</div>
+      <div class="promo-strip-txt">
+        <div class="promo-strip-titulo">Promoción Temporada Baja — Alojate 3 noches y pagá solo 2</div>
+        <div class="promo-strip-cond">Válido para cabañas en temporada baja · No incluye Vacaciones de Invierno · Sujeto a disponibilidad · Consultá fechas habilitadas</div>
+      </div>
+    </div>
+
+    <div class="paquetes-grid">
+      <div class="paquete-card promo">
+        <div class="paquete-ico">💑</div>
+        <div class="paquete-nombre">Escapada en Pareja</div>
+        <ul class="paquete-items">
+          <li>Cabaña Alecrin o Marmelero (2-3 personas)</li>
+          <li>3 noches en temporada baja</li>
+          <li>Acceso a piscinas con toboganes</li>
+          <li>Quincho disponible para uso privado</li>
+        </ul>
+        <div class="paquete-precio-bloque">
+          <div class="paquete-precio-original">Precio regular: $270.000 (3 noches)</div>
+          <div class="paquete-precio-promo">$180.000 <span>total · 3 noches</span></div>
+          <div class="paquete-ahorro">Ahorrás $90.000</div>
+        </div>
+        <a href="https://wa.me/5493743482081?text=Hola!%20Me%20interesa%20la%20promo%203x2%20escapada%20en%20pareja%20en%20Baden%20Baden." target="_blank" rel="noopener" class="paquete-btn">💬 Consultar promo</a>
+      </div>
+      <div class="paquete-card promo destacado">
+        <div class="paquete-ico">👨‍👩‍👧‍👦</div>
+        <div class="paquete-nombre">Vacaciones en Familia</div>
+        <ul class="paquete-items">
+          <li>Cabaña Timbó Colorado, Blanco o Zoita (hasta 6 personas)</li>
+          <li>3 noches en temporada baja</li>
+          <li>Piscinas, toboganes y guardavidas</li>
+          <li>Canchas de fútbol y vóley</li>
+        </ul>
+        <div class="paquete-precio-bloque">
+          <div class="paquete-precio-original">Precio regular: $330.000 (3 noches)</div>
+          <div class="paquete-precio-promo">$220.000 <span>total · 3 noches</span></div>
+          <div class="paquete-ahorro">Ahorrás $110.000</div>
+        </div>
+        <a href="https://wa.me/5493743482081?text=Hola!%20Me%20interesa%20la%20promo%203x2%20vacaciones%20en%20familia%20en%20Baden%20Baden." target="_blank" rel="noopener" class="paquete-btn">💬 Consultar promo</a>
+      </div>
+      <div class="paquete-card">
+        <div class="paquete-ico">🎒</div>
+        <div class="paquete-nombre">Excursión Escolar</div>
+        <ul class="paquete-items">
+          <li>Albergue grupal (12 o 16 plazas)</li>
+          <li>Menú grupal: desayuno, almuerzo y cena</li>
+          <li>Bosque de los Desafíos + piscinas</li>
+          <li>Coordinación personalizada sin cargo</li>
+        </ul>
+        <div class="paquete-precio-bloque">
+          <div class="paquete-precio-promo" style="font-size:1rem;">Precio a medida <span>según cantidad de alumnos</span></div>
+        </div>
+        <a href="https://wa.me/5493743482081?text=Hola!%20Quiero%20consultar%20el%20paquete%20de%20excursi%C3%B3n%20escolar%20en%20Baden%20Baden." target="_blank" rel="noopener" class="paquete-btn">💬 Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TURISMO ESTUDIANTIL ─── -->
+<section class="estudiantil" id="estudiantil" aria-labelledby="est-titulo">
+  <div class="container" style="position:relative;">
+    <span class="tag tag-gold">Turismo Estudiantil</span>
+    <h2 class="sec-titulo" id="est-titulo" style="color:var(--blanco);">El viaje que van a <em>recordar toda la vida</em></h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.72);max-width:640px;margin:0 auto 44px;">Baden Baden es el destino elegido por colegios de todo el país para viajes de egresados y excursiones escolares. Naturaleza, aventura y convivencia en la selva misionera — todo en un solo lugar.</p>
+
+    <!-- STATS STRIP -->
+    <div class="est-stats">
+      <div class="est-stat">
+        <span class="est-stat-num">28</span>
+        <span class="est-stat-label">años recibiendo grupos</span>
+      </div>
+      <div class="est-stat">
+        <span class="est-stat-num">28</span>
+        <span class="est-stat-label">plazas de albergue disponibles</span>
+      </div>
+      <div class="est-stat">
+        <span class="est-stat-num">6</span>
+        <span class="est-stat-label">actividades coordinadas</span>
+      </div>
+      <div class="est-stat">
+        <span class="est-stat-num">1</span>
+        <span class="est-stat-label">presupuesto a medida para tu grupo</span>
+      </div>
+    </div>
+
+    <div class="est-intro">
+      <div class="est-intro-txt">
+        <div class="est-badge">🎒 Especialmente diseñado para colegios</div>
+        <p style="font-size:1.08rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:14px;font-weight:500;">Más que una excursión: una experiencia completa de convivencia, aventura y naturaleza que ningún aula puede dar.</p>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.62);line-height:1.75;margin-bottom:24px;">Coordinamos cada detalle para que docentes y alumnos lleguen, disfruten y se vayan con ganas de volver. Alojamiento, comidas, actividades y atención personalizada — todo resuelto.</p>
+        <div class="est-highlights">
+          <div class="est-hl"><span class="est-hl-ico">🏨</span> Albergues de 12 y 16 plazas con baños completos, para grupos</div>
+          <div class="est-hl"><span class="est-hl-ico">🍽️</span> Menú grupal especial: desayuno, almuerzo y cena en el restaurante</div>
+          <div class="est-hl"><span class="est-hl-ico">🌿</span> Bosque de los Desafíos — aventura y trabajo en equipo en el monte</div>
+          <div class="est-hl"><span class="est-hl-ico">🏊</span> Piscinas con toboganes y servicio de guardavidas</div>
+          <div class="est-hl"><span class="est-hl-ico">⚽</span> Canchas de fútbol y vóley para torneos entre grupos</div>
+        </div>
+      </div>
+      <div class="est-right-col">
+        <div class="est-callout">
+          <div class="est-callout-tag">💬 Presupuesto sin cargo</div>
+          <p class="est-callout-titulo">¿Planeás el viaje de egresados o una excursión escolar?</p>
+          <p>Armamos un presupuesto a medida según la cantidad de estudiantes, los días de estadía y las actividades que quieran incluir.</p>
+          <div class="est-callout-urgencia">🔥 Las fechas de temporada alta se agotan rápido — consultá con tiempo para asegurar tu lugar.</div>
+          <button class="est-callout-btn" onclick="(function(){const msg=encodeURIComponent('Hola! Quiero consultar sobre turismo estudiantil / viaje de egresados en el Complejo Baden Baden.');window.open('https://wa.me/5493743482081?text='+msg,'_blank')})()">
+            💬 Consultar por WhatsApp
+          </button>
+        </div>
+
+        <!-- MINI REEL -->
+        <div class="mini-reel">
+          <div class="mini-reel-wrapper">
+            <div class="mini-reel-track" id="miniReelTrack">
+              <div class="mini-reel-slide">
+                <img src="est-01.jpg" alt="Tobogán acuático · excursión escolar Baden Baden">
+              </div>
+              <div class="mini-reel-slide">
+                <img src="est-02.jpg" alt="Bosque de los Desafíos · actividades grupales Baden Baden">
+              </div>
+            </div>
+            <button class="mini-reel-btn prev" id="miniPrev" onclick="miniMove(-1)" aria-label="Anterior">&#8592;</button>
+            <button class="mini-reel-btn next" id="miniNext" onclick="miniMove(1)" aria-label="Siguiente">&#8594;</button>
+          </div>
+          <div class="mini-reel-dots" id="miniDots"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUBTÍTULO DEL GRID -->
+    <div class="est-paquete-hdr">
+      <h3>¿Qué incluye el paquete grupal?</h3>
+      <p>Todo coordinado para que docentes y organizadores solo tengan que preocuparse por disfrutar.</p>
+    </div>
+
+    <div class="act-grid">
+      <div class="act-card">
+        <div class="act-ico">🏠</div>
+        <h3 class="act-nombre">Alojamiento en Albergue</h3>
+        <p class="act-desc">Albergues de 12 y 16 plazas con baños completos. Infraestructura cómoda y segura, diseñada para grupos escolares en Misiones.</p>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🍽️</div>
+        <h3 class="act-nombre">Menú Grupal Completo</h3>
+        <p class="act-desc">Desayuno, almuerzo y cena en el restaurante del complejo, con menú fijo pensado para grupos. Sin preocupaciones logísticas para los docentes.</p>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🌿</div>
+        <h3 class="act-nombre">Bosque de los Desafíos</h3>
+        <p class="act-desc">Circuito de aventura en el monte nativo: tirolesa, escalada y pruebas en equipo en contacto directo con la selva misionera.</p>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🏊</div>
+        <h3 class="act-nombre">Piscinas & Toboganes</h3>
+        <p class="act-desc">Piletas de distintas profundidades, toboganes acuáticos y servicio de guardavidas. El favorito absoluto de todos los grupos.</p>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">⚽</div>
+        <h3 class="act-nombre">Fútbol & Vóley</h3>
+        <p class="act-desc">Canchas habilitadas para que los grupos armen sus propios torneos. Ideal para integración, diversión y ese espíritu de grupo que queda de por vida.</p>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🎒</div>
+        <h3 class="act-nombre">Coordinación Integral</h3>
+        <p class="act-desc">Armamos el itinerario completo: alojamiento, comidas y actividades en un paquete a medida. Atención personalizada desde el primer contacto.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="est-cta-final">
+      <p class="est-cta-final-eyebrow">¿Tu colegio todavía no eligió destino?</p>
+      <h3>Asegurá las fechas para tu grupo antes de que se agoten</h3>
+      <p class="est-cta-final-sub">Respondemos rápido y armamos el presupuesto sin costo ni compromiso.</p>
+      <div class="est-cta-final-btns">
+        <a href="https://wa.me/5493743482081?text=Hola!%20Quiero%20consultar%20sobre%20turismo%20estudiantil%20en%20Baden%20Baden." target="_blank" rel="noopener" class="est-btn-wa">💬 Hablar con un asesor</a>
+        <a href="#contacto" class="est-btn-sec">📋 Completar formulario</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── TARIFAS ─── -->
+<section class="tarifas" id="tarifas" aria-labelledby="tar-titulo">
+  <div class="container">
+    <span class="tag">Tarifas</span>
+    <h2 class="sec-titulo" id="tar-titulo">Precios <em>transparentes</em></h2>
+    <p class="sec-sub">Tarifas Temporada Verano 2025–2026 (1 dic. 2025 – 30 mar. 2026) · Precios por noche/por unidad + IVA 21% · Sujetos a modificaciones sin previo aviso.</p>
+    <div class="tarifas-grid">
+      <div class="tarifa-card">
+        <h3 class="tarifa-titulo">🏡 Cabañas</h3>
+        <div class="tarifa-row"><span class="tarifa-nombre">Alecrin / Marmelero</span><span class="tarifa-precio">$90.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Timbó Colorado / Timbó Blanco / Zoita</span><span class="tarifa-precio">$110.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Incienso (bungalow)</span><span class="tarifa-precio">$140.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Lapacho Rosa / Lapacho Blanco / Lapacho Negro</span><span class="tarifa-precio">$120.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Guayubira</span><span class="tarifa-precio">$160.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Laurel Negro (VIP)</span><span class="tarifa-precio">$165.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Grapia</span><span class="tarifa-precio">$165.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Laurel Amarillo (VIP)</span><span class="tarifa-precio">$185.000</span></div>
+        <div class="tarifa-row"><span class="tarifa-nombre">Palo Rosa ⭐ (piscina privada)</span><span class="tarifa-precio" style="color:var(--dorado)">$300.000</span></div>
+        <p class="tarifa-nota">No incluye toallas ni desayuno. Persona extra: $17.500/noche (máx. 1 por unidad).</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div class="tarifa-card">
+          <h3 class="tarifa-titulo">🏠 Departamentos</h3>
+          <div class="tarifa-row"><span class="tarifa-nombre">Araticú / Ingá / Ñangapirí</span><span class="tarifa-precio">$110.000</span></div>
+          <p class="tarifa-nota">5 personas · Terraza con parrilla · Planta alta.</p>
+        </div>
+        <div class="tarifa-card">
+          <h3 class="tarifa-titulo">🛏️ Habitaciones Hotel</h3>
+          <div class="tarifa-row"><span class="tarifa-nombre">Estándar — Araucaria / Espina Corona / Urunday / Curupay</span><span class="tarifa-precio">$70.000</span></div>
+          <div class="tarifa-row"><span class="tarifa-nombre">Superior c/ frigobar — Loro Negro / Cancharana / Cedro Misionero</span><span class="tarifa-precio">$80.000</span></div>
+          <p class="tarifa-nota">4 personas por hab. · Base mínima: $70.000/noche (4 pers.).</p>
+        </div>
+        <div class="tarifa-card">
+          <h3 class="tarifa-titulo">👥 Albergue</h3>
+          <div class="tarifa-row"><span class="tarifa-nombre">Albergue × 12 personas</span><span class="tarifa-precio">$17.500/pers.</span></div>
+          <div class="tarifa-row"><span class="tarifa-nombre">Albergue × 16 personas</span><span class="tarifa-precio">$17.500/pers.</span></div>
+          <p class="tarifa-nota">Sin ropa de cama — traer sábanas, almohada y manta. Incluye uso de piscinas y demás instalaciones. Mínimo: $70.000/hab.</p>
+        </div>
+        <div class="tarifa-card">
+          <h3 class="tarifa-titulo">🏊 Entrada & Servicios</h3>
+          <div class="tarifa-row"><span class="tarifa-nombre">Entrada Lun–Vie (mayores de 4 años)</span><span class="tarifa-precio">$7.000/pers.</span></div>
+          <div class="tarifa-row"><span class="tarifa-nombre">Entrada Sáb / Dom / Feriados</span><span class="tarifa-precio">$8.000/pers.</span></div>
+          <div class="tarifa-row"><span class="tarifa-nombre">Carpa — entrada + carpa</span><span class="tarifa-precio">$10.000/noche</span></div>
+          <div class="tarifa-row"><span class="tarifa-nombre">Quincho (Lun–Dom)</span><span class="tarifa-precio">$10.000/día</span></div>
+          <p class="tarifa-nota">Estacionamiento gratuito · Tarifas no incluyen toallas ni desayuno.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESTAURANTE ─── -->
+<section class="restaurante" id="restaurante" aria-labelledby="rest-titulo">
+  <div class="container">
+    <span class="tag">Gastronomía</span>
+    <h2 class="sec-titulo" id="rest-titulo">El <em>restaurante</em> del complejo</h2>
+    <div class="rest-layout">
+      <div class="rest-foto">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/restaurante.jpg" alt="Restaurante Baden Baden" loading="lazy">
+      </div>
+      <div class="rest-info">
+        <p style="font-size:1.05rem;color:var(--texto-suave);line-height:1.75;margin-bottom:8px;">Nuestro restaurante ofrece una <strong style="color:var(--verde)">excelente propuesta gastronómica</strong> con sabores regionales misioneros, preparados con ingredientes frescos y locales.</p>
+        <div class="rest-feature">
+          <div class="rest-feature-ico">🍽️</div>
+          <div class="rest-feature-body">
+            <h4>Cocina regional misionera</h4>
+            <p>Platos típicos de la región con ingredientes frescos del norte argentino. Una experiencia gastronómica que complementa la estadía.</p>
+          </div>
+        </div>
+        <div class="rest-feature">
+          <div class="rest-feature-ico">🌿</div>
+          <div class="rest-feature-body">
+            <h4>Entorno natural único</h4>
+            <p>Comé rodeado de la selva misionera. El restaurante está integrado en el paisaje del complejo para una experiencia completa.</p>
+          </div>
+        </div>
+        <div class="rest-feature">
+          <div class="rest-feature-ico">👨‍👩‍👧</div>
+          <div class="rest-feature-body">
+            <h4>Apto para toda la familia</h4>
+            <p>Menú variado con opciones para chicos y grandes. Reservas disponibles para grupos y eventos especiales.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/+5493743482081?text=Hola!%20Quiero%20consultar%20sobre%20el%20restaurante" target="_blank" rel="noopener" class="btn btn-primary">Consultar menú por WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALERÍA ─── -->
+<section class="galeria" id="galeria" aria-labelledby="gal-titulo">
+  <div class="container">
+    <span class="tag">Galería</span>
+    <h2 class="sec-titulo" id="gal-titulo">El complejo <em>en imágenes</em></h2>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home1.jpg" alt="Complejo Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home2.jpg" alt="Alojamientos Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home3.jpg" alt="Naturaleza Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/cabanas.jpg" alt="Cabañas Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home4.jpg" alt="Instalaciones Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/restaurante.jpg" alt="Restaurante Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/albergues-300x300.jpg" alt="Albergues Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="quincho.jpg" alt="Quincho Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+      <div class="galeria-item">
+        <img src="galeria-quincho2.jpg" alt="Quinchos y área verde Baden Baden" loading="lazy">
+        <div class="galeria-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BANNER JARDÍN AMÉRICA TURISMO ─── -->
+<section class="banner-ja" id="destino" aria-label="Jardín América Turismo">
+  <div class="container">
+    <div class="banner-ja-inner">
+      <div class="banner-ja-txt">
+        <p class="banner-ja-eyebrow">🗺️ Explorá el destino completo</p>
+        <h2 class="banner-ja-titulo">¿Qué más hay para hacer<br>en Jardín América?</h2>
+        <p class="banner-ja-sub">Saltos del Tabay, ruinas jesuíticas, saltos de agua, selva misionera y mucho más. El sitio oficial de turismo de Jardín América tiene todo lo que necesitás para planificar tu visita.</p>
+      </div>
+      <a href="https://enzomantay-del.github.io/jardin-america-turismo/" target="_blank" rel="noopener" class="banner-ja-btn">
+        Ver atractivos del destino →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── UBICACIÓN ─── -->
+<section class="ubicacion" id="ubicacion" aria-labelledby="ubic-titulo">
+  <div class="container">
+    <span class="tag">Cómo llegar</span>
+    <h2 class="sec-titulo" id="ubic-titulo">Estamos en <em>Jardín América</em></h2>
+    <div class="ubic-layout">
+      <div class="ubic-info">
+        <div class="ubic-item">
+          <div class="ubic-ico">📍</div>
+          <div>
+            <h4>Dirección</h4>
+            <p>N3328 Jardín América, Misiones, Argentina<br>Sobre la Ruta Nacional 12 · RN12 1435</p>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-ico">🚗</div>
+          <div>
+            <h4>En auto</h4>
+            <p>Desde Posadas: 100 km por Ruta 12 (1 h 15 min)<br>Desde Puerto Iguazú: 200 km por Ruta 12 (2 h 30 min)<br>Estacionamiento gratuito dentro del complejo.</p>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-ico">🚌</div>
+          <div>
+            <h4>En colectivo</h4>
+            <p>Servicios frecuentes desde Posadas, Iguazú y Oberá. Bajada frente al complejo sobre la Ruta 12.</p>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-ico">🗺️</div>
+          <div>
+            <h4>Lugares cercanos</h4>
+            <p>Saltos del Tabay (4 km) · Reducciones de San Ignacio Miní (30 km) · Salto Encantado (45 km) · Cataratas del Iguazú (200 km)</p>
+          </div>
+        </div>
+      </div>
+      <div class="mapa-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=-27.05443263365092,-55.25859016978603&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación del Complejo Baden Baden en Google Maps"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq" id="faq" aria-labelledby="faq-titulo">
+  <div class="container">
+    <span class="tag">Preguntas frecuentes</span>
+    <h2 class="sec-titulo" id="faq-titulo">Todo lo que <em>querés saber</em></h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿El precio incluye toallas y desayuno? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">No. Los precios de alojamiento no incluyen toallas ni desayuno. Te recomendamos traer tus propias toallas y consultar las opciones de desayuno disponibles en el restaurante del complejo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Cuál es la política de cancelación? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Si cancelás con al menos 10 días de anticipación, se realiza el reembolso correspondiente con una retención del 24% por facturación e IVA. Sin anticipación suficiente, no se realizan devoluciones. Verificá los tiempos de procesamiento bancario.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Cuánto cuesta entrar solo a las piscinas? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">La entrada general para uso de piscinas es de $7.000 por persona de lunes a viernes, y $8.000 los sábados, domingos y feriados. Aplica para mayores de 4 años. Los quinchos y carpas tienen un costo adicional de $10.000/día.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Hay estacionamiento? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Sí, el estacionamiento es gratuito para todos los visitantes y huéspedes del complejo. Excepción: si se utiliza el estacionamiento para pernoctar en el vehículo, tiene un costo adicional.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Admiten mascotas? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Consultanos directamente por WhatsApp o teléfono para conocer nuestra política actualizada sobre mascotas, ya que puede variar según el tipo de alojamiento.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Hay guardavidas en las piscinas? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Sí, las piscinas cuentan con servicio de guardavidas durante el horario de apertura. La seguridad de nuestros visitantes es nuestra prioridad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿El Bosque de los Desafíos está incluido en el paquete estudiantil? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Depende del paquete que se contrate. En los paquetes grupales para colegios suele incluirse junto con las canchas y las piscinas. Consultanos para armar un presupuesto a medida para tu institución.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pregunta" onclick="toggleFaq(this)">¿Qué métodos de pago aceptan? <span class="faq-icono">+</span></button>
+        <div class="faq-respuesta">Aceptamos transferencia bancaria y efectivo. Para más información sobre métodos de pago actualizados, consultanos directamente por WhatsApp o correo electrónico.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section class="contacto" id="contacto" aria-labelledby="cont-titulo">
+  <div class="container">
+    <div class="contacto-layout">
+      <div class="contacto-info">
+        <h2 id="cont-titulo">Reservá tu estadía<br>en <em>Baden Baden</em></h2>
+        <p>Escribinos, llamanos o completá el formulario. Respondemos rápido y te ayudamos a elegir el mejor alojamiento para tu grupo.</p>
+        <div class="contacto-items">
+          <a href="https://wa.me/+5493743482081" target="_blank" rel="noopener" class="contacto-item" style="text-decoration:none;">
+            <span class="contacto-ico">💬</span>
+            <div class="contacto-item-body">
+              <div class="contacto-item-label">WhatsApp</div>
+              <div class="contacto-item-val">+54 9 3743 482-081</div>
+            </div>
+          </a>
+          <a href="tel:+5437434820831" class="contacto-item" style="text-decoration:none;">
+            <span class="contacto-ico">📞</span>
+            <div class="contacto-item-body">
+              <div class="contacto-item-label">Teléfono</div>
+              <div class="contacto-item-val">(03743) 482-081 / 482-083</div>
+            </div>
+          </a>
+          <a href="mailto:hola@complejobadenbaden.com.ar" class="contacto-item" style="text-decoration:none;">
+            <span class="contacto-ico">✉️</span>
+            <div class="contacto-item-body">
+              <div class="contacto-item-label">Email</div>
+              <div class="contacto-item-val">campingbaden@yahoo.com.ar</div>
+            </div>
+          </a>
+          <div class="contacto-item">
+            <span class="contacto-ico">📍</span>
+            <div class="contacto-item-body">
+              <div class="contacto-item-label">Dirección</div>
+              <div class="contacto-item-val">RN12 1435 · Jardín América, Misiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacto-form">
+        <h3 class="form-titulo">Consulta de disponibilidad</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-nombre">Nombre</label>
+            <input type="text" id="f-nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="f-tel">Teléfono / WhatsApp</label>
+            <input type="tel" id="f-tel" placeholder="+54 9 ...">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-checkin">Llegada</label>
+            <input type="date" id="f-checkin">
+          </div>
+          <div class="form-group">
+            <label for="f-checkout">Salida</label>
+            <input type="date" id="f-checkout">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-tipo">Tipo de alojamiento</label>
+            <select id="f-tipo">
+              <option>Cabaña</option>
+              <option>Departamento</option>
+              <option>Habitación hotel</option>
+              <option>Albergue grupal</option>
+              <option>Solo día de piscina</option>
+              <option>No sé todavía</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-personas">Cantidad de personas</label>
+            <select id="f-personas">
+              <option>1–2 personas</option>
+              <option>3–4 personas</option>
+              <option>5–6 personas</option>
+              <option>7–10 personas</option>
+              <option>Más de 10</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-mensaje">Mensaje (opcional)</label>
+          <textarea id="f-mensaje" rows="3" placeholder="¿Alguna consulta o requerimiento especial?"></textarea>
+        </div>
+        <button class="form-submit" onclick="enviarWhatsApp()">Enviar consulta por WhatsApp 💬</button>
+        <p class="form-nota">Te respondemos dentro de las 24 horas hábiles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/logo-baden.png" alt="Baden Baden" onerror="this.style.display='none'">
+          <div class="footer-logo-txt">Complejo Baden Baden</div>
+        </div>
+        <p>28 años abriendo las puertas de la selva misionera. Cabañas, albergues para grupos escolares, piscinas, restaurante y el Bosque de los Desafíos sobre la Ruta 12 en Jardín América.</p>
+        <div class="footer-redes">
+          <a href="https://www.instagram.com/complejobaden/" target="_blank" rel="noopener" class="red-ico" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100064798383685" target="_blank" rel="noopener" class="red-ico" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/+5493743482081" target="_blank" rel="noopener" class="red-ico" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Alojamientos</h4>
+        <ul>
+          <li><a href="#alojamientos">Cabañas (14 opciones)</a></li>
+          <li><a href="#alojamientos">Departamentos (3)</a></li>
+          <li><a href="#alojamientos">Habitaciones hotel (10)</a></li>
+          <li><a href="#alojamientos">Albergue grupal (2)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>El complejo</h4>
+        <ul>
+          <li><a href="#instalaciones">Piscinas & Toboganes</a></li>
+          <li><a href="#estudiantil">Turismo Estudiantil</a></li>
+          <li><a href="#estudiantil">Bosque de los Desafíos</a></li>
+          <li><a href="#estudiantil">Viajes de Egresados</a></li>
+          <li><a href="#restaurante">Restaurante</a></li>
+          <li><a href="#tarifas">Tarifas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+543743482081">(03743) 482-081</a></li>
+          <li><a href="tel:+543743482083">(03743) 482-083</a></li>
+          <li><a href="mailto:hola@complejobadenbaden.com.ar">hola@complejobadenbaden.com.ar</a></li>
+          <li><a href="https://wa.me/+5493743482081" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Complejo Turístico Baden Baden · Jardín América, Misiones, Argentina</span>
+      <span>Diseñado por <a href="#">Selva.tic</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── MODAL PROMO 3x2 ─── -->
+<div class="modal-overlay" id="modalPromo" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close" onclick="cerrarModal()" aria-label="Cerrar">✕</button>
+      <div class="modal-badge">3×2</div>
+      <h2 class="modal-titulo" id="modal-titulo">Alojate 3 noches<br>y pagá solo 2</h2>
+      <p class="modal-subtitulo">Promoción exclusiva de temporada baja en el Complejo Baden Baden</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-combos">
+        <div class="modal-combo">
+          <div class="modal-combo-ico">💑</div>
+          <div class="modal-combo-nombre">Escapada en Pareja</div>
+          <div class="modal-combo-original">$270.000</div>
+          <div class="modal-combo-precio">$180.000 <span>· 3 noches</span></div>
+          <div class="modal-combo-ahorro">Ahorrás $90.000</div>
+        </div>
+        <div class="modal-combo gold">
+          <div class="modal-combo-ico">👨‍👩‍👧‍👦</div>
+          <div class="modal-combo-nombre">Vacaciones en Familia</div>
+          <div class="modal-combo-original">$330.000</div>
+          <div class="modal-combo-precio">$220.000 <span>· 3 noches</span></div>
+          <div class="modal-combo-ahorro">Ahorrás $110.000</div>
+        </div>
+      </div>
+      <p class="modal-cond">📋 Válido en temporada baja · No incluye Vacaciones de Invierno<br>Sujeto a disponibilidad · Consultá fechas habilitadas</p>
+      <div class="modal-cta">
+        <a href="https://wa.me/5493743482081?text=Hola!%20Vi%20la%20promo%203x2%20y%20quiero%20consultar%20disponibilidad%20en%20Baden%20Baden." target="_blank" rel="noopener" class="modal-btn-wa" onclick="cerrarModal()">
+          💬 Consultar disponibilidad por WhatsApp
+        </a>
+        <button class="modal-btn-close" onclick="cerrarModal()">Seguir navegando el sitio</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── WHATSAPP FLOTANTE ─── -->
+<a href="https://wa.me/+5493743482081?text=Hola!%20Quiero%20consultar%20sobre%20alojamiento%20en%20Baden%20Baden" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Modal promo 3x2
+  const modalPromo = document.getElementById('modalPromo');
+  function cerrarModal() {
+    modalPromo.classList.remove('visible');
+  }
+  modalPromo.addEventListener('click', function(e) {
+    if (e.target === modalPromo) cerrarModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') cerrarModal();
+  });
+  window.addEventListener('load', function() {
+    setTimeout(() => modalPromo.classList.add('visible'), 600);
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Alojamiento tabs
+  function showPanel(id, btn) {
+    document.querySelectorAll('.aloj-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.aloj-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Scroll to contact
+  function scrollToContact() {
+    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Enviar por WhatsApp
+  function enviarWhatsApp() {
+    const nombre = document.getElementById('f-nombre').value || 'Sin nombre';
+    const tel = document.getElementById('f-tel').value || 'No indicado';
+    const checkin = document.getElementById('f-checkin').value || 'No indicado';
+    const checkout = document.getElementById('f-checkout').value || 'No indicado';
+    const tipo = document.getElementById('f-tipo').value;
+    const personas = document.getElementById('f-personas').value;
+    const msg = document.getElementById('f-mensaje').value || '';
+    const texto = `Hola! Quiero consultar disponibilidad en Baden Baden.
+👤 Nombre: ${nombre}
+📞 Teléfono: ${tel}
+📅 Llegada: ${checkin}
+📅 Salida: ${checkout}
+🏡 Tipo: ${tipo}
+👥 Personas: ${personas}
+💬 Mensaje: ${msg}`;
+    window.open(`https://wa.me/+5493743482081?text=${encodeURIComponent(texto)}`, '_blank');
+  }
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.aloj-card, .inst-card, .act-card, .tarifa-card, .ubic-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+
+  // ─── MINI REEL ESTUDIANTIL ───
+  (function() {
+    const track   = document.getElementById('miniReelTrack');
+    const dotsEl  = document.getElementById('miniDots');
+    const btnPrev = document.getElementById('miniPrev');
+    const btnNext = document.getElementById('miniNext');
+    if (!track) return;
+
+    const slides = track.querySelectorAll('.mini-reel-slide');
+    const total  = slides.length;
+    let current  = 0;
+    let timer;
+
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'mini-reel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Imagen ' + (i + 1));
+      d.onclick = () => goTo(i);
+      dotsEl.appendChild(d);
+    });
+
+    function update() {
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsEl.querySelectorAll('.mini-reel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+      if (btnPrev) btnPrev.disabled = (total <= 1);
+      if (btnNext) btnNext.disabled = (total <= 1);
+    }
+
+    function goTo(n) {
+      current = (n + total) % total;
+      update();
+      resetTimer();
+    }
+
+    window.miniMove = function(dir) { goTo(current + dir); };
+
+    function resetTimer() {
+      clearInterval(timer);
+      if (total > 1) timer = setInterval(() => goTo(current + 1), 4500);
+    }
+
+    update();
+    resetTimer();
+  })();
+</script>
+
+</body>
+</html>
