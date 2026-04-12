@@ -363,7 +363,7 @@
       color: #fff; font-size: .72rem; font-weight: 700;
       padding: 4px 10px; border-radius: 100px;
     }
-    .comparador { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--gris-2); overflow-x: auto; }
+    .comparador { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--gris-2); overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .comparador-titulo {
       font-size: .78rem; font-weight: 700; text-transform: uppercase;
       letter-spacing: .1em; color: var(--verde-claro); margin-bottom: 8px;
@@ -929,9 +929,9 @@
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .aloj-panel.active { grid-template-columns: 1fr; }
       .tarifas-grid { grid-template-columns: 1fr; }
-      .comparador-table th:nth-child(n+3),
-      .comparador-table td:nth-child(n+3) { display: none; }
-      .comparador-table th:nth-child(1) { width: 40%; }
+      .comparador-table { min-width: 560px; font-size: .76rem; }
+      .comparador-table th, .comparador-table td { padding: 10px 10px; }
+      .comparador::before { content: '← Deslizá para ver más →'; display: block; font-size: .72rem; color: var(--texto-suave); text-align: center; margin-bottom: 8px; font-style: italic; }
       .mini-reel-slide img { height: 180px; }
       .est-stats { grid-template-columns: repeat(2,1fr); }
       .est-cta-final-btns { flex-direction: column; align-items: center; }
