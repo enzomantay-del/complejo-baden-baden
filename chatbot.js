@@ -165,29 +165,57 @@
     s.id = 'bb-chat-styles';
     s.textContent = `
       .bb-chat-launcher {
-        position: fixed; bottom: 28px; left: 28px; z-index: 1001;
-        display: flex; align-items: center; gap: 10px;
-        background: #1A3C2A; color: #fff; border: none;
-        padding: 12px 18px 12px 14px; border-radius: 50px;
-        font-family: inherit; font-size: .88rem; font-weight: 700;
-        cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.28);
+        position: fixed; bottom: 100px; right: 24px; z-index: 1001;
+        width: 68px; height: 68px; border-radius: 50%;
+        background: linear-gradient(145deg, #C9A84C 0%, #b8943e 100%);
+        color: #fff; border: 3px solid #fff;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.85rem; cursor: pointer;
+        box-shadow: 0 8px 28px rgba(201,168,76,.55), 0 4px 12px rgba(0,0,0,.2);
         transition: transform .2s, box-shadow .2s;
+        animation: bbPulse 2s ease-in-out infinite;
       }
-      .bb-chat-launcher:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.35); }
-      .bb-chat-launcher-ico {
-        width: 36px; height: 36px; border-radius: 50%;
-        background: #C9A84C; display: flex; align-items: center; justify-content: center;
-        font-size: 1.15rem; flex-shrink: 0;
+      .bb-chat-launcher:hover { transform: scale(1.08); box-shadow: 0 10px 36px rgba(201,168,76,.65); }
+      .bb-chat-launcher.is-open {
+        animation: none;
+        background: #1A3C2A;
+        font-size: 1.4rem;
       }
-      .bb-chat-launcher-txt { text-align: left; line-height: 1.2; }
-      .bb-chat-launcher-txt small {
-        display: block; font-size: .65rem; font-weight: 600;
-        letter-spacing: .06em; text-transform: uppercase; color: #F0D98A; opacity: .95;
+      .bb-chat-launcher-badge {
+        position: absolute; top: -6px; right: -6px;
+        background: #c0392b; color: #fff;
+        font-size: .62rem; font-weight: 800; letter-spacing: .04em;
+        text-transform: uppercase; padding: 3px 7px; border-radius: 8px;
+        border: 2px solid #fff; line-height: 1.2;
+        box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      }
+      .bb-chat-hint {
+        position: fixed; bottom: 118px; right: 104px; z-index: 1001;
+        background: #1A3C2A; color: #fff;
+        font-size: .82rem; font-weight: 700; font-family: inherit;
+        padding: 10px 14px; border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.25);
+        max-width: 200px; line-height: 1.35;
+        opacity: 0; pointer-events: none;
+        transform: translateX(8px);
+        transition: opacity .35s, transform .35s;
+      }
+      .bb-chat-hint.visible { opacity: 1; transform: translateX(0); pointer-events: none; }
+      .bb-chat-hint::after {
+        content: ''; position: absolute; right: -8px; top: 50%;
+        transform: translateY(-50%);
+        border: 8px solid transparent; border-left-color: #1A3C2A;
+      }
+      .bb-chat-hint strong { color: #F0D98A; display: block; font-size: .68rem;
+        text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
+      @keyframes bbPulse {
+        0%, 100% { box-shadow: 0 8px 28px rgba(201,168,76,.55), 0 0 0 0 rgba(201,168,76,.45); }
+        50% { box-shadow: 0 8px 28px rgba(201,168,76,.55), 0 0 0 14px rgba(201,168,76,0); }
       }
       .bb-chat-panel {
-        position: fixed; bottom: 96px; left: 28px; z-index: 1002;
+        position: fixed; bottom: 184px; right: 24px; z-index: 1002;
         width: min(380px, calc(100vw - 32px));
-        height: min(540px, calc(100vh - 130px));
+        height: min(520px, calc(100vh - 210px));
         background: #fff; border-radius: 20px;
         box-shadow: 0 16px 48px rgba(0,0,0,.28);
         display: flex; flex-direction: column; overflow: hidden;
@@ -286,8 +314,8 @@
         padding: 0 12px 10px; background: #fff; flex-shrink: 0;
       }
       @media (max-width: 640px) {
-        .bb-chat-launcher { left: 16px; bottom: 90px; padding: 10px 14px 10px 12px; font-size: .8rem; }
-        .bb-chat-launcher-txt span { display: none; }
+        .bb-chat-launcher { right: 16px; bottom: 92px; width: 64px; height: 64px; font-size: 1.7rem; }
+        .bb-chat-hint { right: 90px; bottom: 108px; max-width: 160px; font-size: .78rem; }
         .bb-chat-panel {
           left: 0; right: 0; bottom: 0; width: 100%;
           height: min(88vh, 640px); border-radius: 20px 20px 0 0;
@@ -304,14 +332,18 @@
     const launcher = document.createElement('button');
     launcher.className = 'bb-chat-launcher';
     launcher.id = 'bbChatLauncher';
-    launcher.setAttribute('aria-label', 'Abrir asistente virtual');
+    launcher.setAttribute('aria-label', 'Abrir chat demo Baden Baden');
+    launcher.setAttribute('title', 'Chat demo Baden Baden');
     launcher.innerHTML = `
-      <span class="bb-chat-launcher-ico" aria-hidden="true">💬</span>
-      <span class="bb-chat-launcher-txt">
-        <small>Demo</small>
-        <span>Asistente Baden Baden</span>
-      </span>
+      <span class="bb-chat-ico" aria-hidden="true">💬</span>
+      <span class="bb-chat-launcher-badge">Demo</span>
     `;
+
+    const hint = document.createElement('div');
+    hint.className = 'bb-chat-hint';
+    hint.id = 'bbChatHint';
+    hint.innerHTML = '<strong>Nuevo</strong>Probá el chat demo →';
+    hint.setAttribute('aria-hidden', 'true');
 
     const panel = document.createElement('div');
     panel.className = 'bb-chat-panel';
@@ -338,6 +370,7 @@
     `;
 
     document.body.appendChild(launcher);
+    document.body.appendChild(hint);
     document.body.appendChild(panel);
 
     const quick = panel.querySelector('#bbChatQuick');
@@ -361,10 +394,16 @@
       sendUser(v);
     });
 
-    // Bienvenida al abrir por primera vez
+    // Hint flotante para que se note el botón
+    setTimeout(() => hint.classList.add('visible'), 1200);
+    setTimeout(() => hint.classList.remove('visible'), 8000);
+
     let welcomed = false;
     function open() {
       panel.classList.add('open');
+      launcher.classList.add('is-open');
+      launcher.querySelector('.bb-chat-ico').textContent = '✕';
+      hint.classList.remove('visible');
       if (!welcomed) {
         welcomed = true;
         addBot(
@@ -375,6 +414,8 @@
     }
     function close() {
       panel.classList.remove('open');
+      launcher.classList.remove('is-open');
+      launcher.querySelector('.bb-chat-ico').textContent = '💬';
     }
     function toggle() {
       if (panel.classList.contains('open')) close();
