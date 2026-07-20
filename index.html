@@ -76,14 +76,21 @@
     /* ─── NAVBAR ─── */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      padding: 14px 0;
-      background: var(--crema);
-      box-shadow: 0 2px 16px rgba(0,0,0,.1);
-      transition: padding var(--trans), box-shadow var(--trans);
+      padding: 18px 0;
+      background: transparent;
+      box-shadow: none;
+      transition: padding var(--trans), box-shadow var(--trans), background var(--trans);
     }
     .navbar.scrolled {
-      padding: 10px 0; box-shadow: 0 2px 24px rgba(0,0,0,.14);
+      padding: 10px 0;
+      background: var(--crema);
+      box-shadow: 0 2px 24px rgba(0,0,0,.14);
     }
+    .navbar:not(.scrolled) .navbar-logo-txt { color: var(--blanco); }
+    .navbar:not(.scrolled) .navbar-logo-txt span { color: rgba(255,255,255,.7); }
+    .navbar:not(.scrolled) .nav-links a { color: rgba(255,255,255,.88); }
+    .navbar:not(.scrolled) .nav-links a:hover { color: var(--dorado-claro); }
+    .navbar:not(.scrolled) .nav-toggle span { background: var(--blanco); }
     .navbar-inner {
       display: flex; align-items: center; justify-content: space-between;
     }
@@ -117,120 +124,168 @@
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .nav-toggle span { width: 24px; height: 2px; background: var(--verde); border-radius: 2px; transition: var(--trans); }
 
-    /* ─── HERO ─── */
+    /* ─── HERO (full-bleed) ─── */
     .hero {
+      position: relative;
       min-height: 100vh;
-      background: var(--verde);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
       overflow: hidden;
-      padding-top: 72px;
+      padding: 0;
+      color: var(--blanco);
     }
-
-    /* Lado izquierdo: texto sobre verde sólido */
-    .hero-izq {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 64px 56px 64px 48px;
-      position: relative; z-index: 2;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: .75rem; font-weight: 700; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--dorado);
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      transform: scale(1.04);
+      animation: heroKen 22s ease-in-out infinite alternate;
+    }
+    @keyframes heroKen {
+      from { transform: scale(1.04) translate(0, 0); }
+      to   { transform: scale(1.1) translate(-1.5%, -1%); }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(10, 28, 18, .35) 0%, rgba(10, 28, 18, .15) 35%, rgba(10, 28, 18, .72) 72%, rgba(10, 28, 18, .92) 100%),
+        linear-gradient(90deg, rgba(10, 28, 18, .55) 0%, rgba(10, 28, 18, .2) 55%, transparent 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 120px 24px 72px;
+    }
+    .hero-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.02em;
+      color: var(--blanco);
       margin-bottom: 18px;
+      text-shadow: 0 2px 40px rgba(0,0,0,.35);
+      animation: heroFadeUp .9s ease both;
     }
-    .hero-eyebrow::before {
-      content: ''; display: block;
-      width: 28px; height: 2px; background: var(--dorado); border-radius: 2px;
+    .hero-brand span {
+      display: block;
+      font-style: italic;
+      color: var(--dorado-claro);
+      font-weight: 700;
     }
     .hero-h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
-      font-weight: 900; line-height: 1.0; color: var(--blanco);
-      margin-bottom: 20px;
+      font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: rgba(255,255,255,.95);
+      margin-bottom: 14px;
+      max-width: 28ch;
+      animation: heroFadeUp .9s .12s ease both;
     }
-    .hero-h1 em { font-style: italic; color: var(--dorado); }
     .hero-sub {
-      font-size: 1rem; color: rgba(255,255,255,.72);
-      margin-bottom: 32px; max-width: 420px; line-height: 1.75;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 28px;
+      max-width: 38ch;
+      line-height: 1.65;
+      animation: heroFadeUp .9s .22s ease both;
     }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
-    .hero-chips {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px;
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: heroFadeUp .9s .32s ease both;
     }
-    .hero-chip {
-      display: flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
-      border-radius: 100px; padding: 6px 14px;
-      font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500;
+    .hero-btns .btn-gold {
+      box-shadow: 0 8px 28px rgba(0,0,0,.25);
+    }
+    .hero-btns .btn-outline-white {
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,.08);
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg img { animation: none; transform: none; }
+      .hero-brand, .hero-h1, .hero-sub, .hero-btns { animation: none; }
     }
 
-    /* Booking bar — sobre fondo verde, sin transparencia */
+    /* Booking strip — debajo del hero */
+    .booking-strip {
+      background: var(--verde);
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
     .booking-bar {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--radio-lg); padding: 20px;
-      display: flex; flex-direction: column; gap: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radio-lg);
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 18px;
+      align-items: end;
     }
     .booking-bar-titulo {
-      font-size: .72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--dorado); margin-bottom: 4px;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--dorado-claro);
+      margin-bottom: 6px;
+      white-space: nowrap;
     }
-    .booking-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .booking-bar-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--blanco);
+      line-height: 1.2;
+      max-width: 140px;
+    }
+    .booking-fields {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
     .booking-field { display: flex; flex-direction: column; gap: 4px; }
     .booking-field label {
-      font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.6);
+      font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.55);
       text-transform: uppercase; letter-spacing: .08em;
     }
     .booking-field input, .booking-field select {
-      border: 1.5px solid rgba(255,255,255,.25); border-radius: 8px;
-      padding: 10px 12px; font-size: .88rem; font-family: 'Inter', sans-serif;
+      border: 1.5px solid rgba(255,255,255,.22); border-radius: 8px;
+      padding: 11px 12px; font-size: .88rem; font-family: 'Inter', sans-serif;
       color: var(--blanco); background: rgba(255,255,255,.1);
-      transition: border-color var(--trans);
+      transition: border-color var(--trans); width: 100%;
     }
-    .booking-field input::placeholder { color: rgba(255,255,255,.4); }
     .booking-field select option { color: var(--texto); background: var(--blanco); }
     .booking-field input:focus, .booking-field select:focus {
       outline: none; border-color: var(--dorado);
     }
     .booking-btn {
       background: var(--dorado); color: var(--blanco);
-      border: none; border-radius: 8px; padding: 13px;
+      border: none; border-radius: 8px; padding: 13px 22px;
       font-size: .9rem; font-weight: 700; cursor: pointer;
-      font-family: 'Inter', sans-serif; width: 100%;
+      font-family: 'Inter', sans-serif;
       transition: background var(--trans), transform var(--trans);
-      letter-spacing: .03em;
+      letter-spacing: .03em; white-space: nowrap; height: fit-content;
     }
     .booking-btn:hover { background: #b8943e; transform: translateY(-1px); }
-
-    /* Lado derecho: galería de imágenes */
-    .hero-der {
-      position: relative; overflow: hidden;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      padding: 80px 32px 32px 8px;
-    }
-    .hero-foto {
-      border-radius: 14px; overflow: hidden;
-      position: relative;
-    }
-    .hero-foto img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-    }
-    .hero-foto-grande {
-      grid-row: span 2;
-      border-radius: 20px;
-    }
-    .hero-foto-badge {
-      position: absolute; bottom: 12px; left: 12px;
-      background: rgba(26,60,42,.9); backdrop-filter: blur(4px);
-      color: var(--blanco); font-size: .72rem; font-weight: 700;
-      padding: 5px 12px; border-radius: 100px;
-      border: 1px solid rgba(255,255,255,.2);
-    }
 
     /* ─── STATS STRIP ─── */
     .stats-strip {
@@ -954,7 +1009,11 @@
     /* Tablet grande (≤1024px) */
     @media (max-width: 1024px) {
       .container { padding: 0 20px; }
-      .hero-izq { padding: 80px 40px 48px 36px; }
+      .hero-content { padding: 110px 20px 56px; }
+      .booking-bar { grid-template-columns: 1fr; gap: 14px; }
+      .booking-bar-label { max-width: none; }
+      .booking-fields { grid-template-columns: repeat(2, 1fr); }
+      .booking-btn { width: 100%; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
       .est-stats { grid-template-columns: repeat(2,1fr); }
     }
@@ -982,9 +1041,8 @@
 
     /* Tablet chica / celular grande (≤768px) */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-izq { padding: 90px 24px 40px; }
-      .hero-der { display: none; }
+      .hero { min-height: 92vh; min-height: 92dvh; }
+      .hero-content { padding: 100px 24px 48px; }
       .act-grid { grid-template-columns: 1fr 1fr; }
       .aloj-tabs { gap: 6px; }
       .aloj-tab { padding: 8px 14px; font-size: .8rem; }
@@ -1005,7 +1063,7 @@
       }
       .nav-toggle { display: flex; z-index: 1000; }
       .inst-grid, .act-grid, .paquetes-grid { grid-template-columns: 1fr; }
-      .booking-row { grid-template-columns: 1fr; }
+      .booking-fields { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
@@ -1022,11 +1080,11 @@
 
     /* Móvil chico (≤400px) */
     @media (max-width: 400px) {
-      .hero-izq { padding: 80px 16px 32px; }
+      .hero-content { padding: 92px 16px 40px; }
       .container { padding: 0 14px; }
       .footer-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
-      .hero-btns .btn { text-align: center; justify-content: center; }
+      .hero-btns .btn { text-align: center; justify-content: center; width: 100%; }
       .aloj-tab { padding: 7px 10px; font-size: .75rem; }
     }
 
@@ -1060,24 +1118,31 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="inicio" aria-label="Inicio">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home1.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-  <!-- IZQUIERDA: texto sobre verde sólido -->
-  <div class="hero-izq">
-    <p class="hero-eyebrow">Jardín América · Misiones · Ruta Nacional 12</p>
-    <h1 class="hero-h1">Tu refugio en<br>la <em>selva<br>misionera</em></h1>
-    <p class="hero-sub">Cabañas, departamentos, habitaciones y camping en plena naturaleza. Piscinas, toboganes, tirolesa y mucho más sobre la Ruta 12.</p>
-
-    <div class="hero-chips">
-      <span class="hero-chip">🏡 12 cabañas</span>
-      <span class="hero-chip">🏊 Piscinas</span>
-      <span class="hero-chip">🦅 Tirolesa</span>
-      <span class="hero-chip">🐴 Cabalgatas</span>
-      <span class="hero-chip">28+ años</span>
+  <div class="hero-content">
+    <p class="hero-brand">Baden Baden<span>Jardín América</span></p>
+    <h1 class="hero-h1">Tu refugio en la selva misionera</h1>
+    <p class="hero-sub">Cabañas, piscinas y aventura sobre la Ruta 12 — más de 28 años recibiendo familias y grupos.</p>
+    <div class="hero-btns">
+      <a href="#alojamientos" class="btn btn-gold">Ver alojamientos</a>
+      <a href="#contacto" class="btn btn-outline-white">Consultar disponibilidad</a>
     </div>
+  </div>
+</section>
 
-    <div class="booking-bar" role="search" aria-label="Consultar disponibilidad">
-      <p class="booking-bar-titulo">📅 Consultar disponibilidad</p>
-      <div class="booking-row">
+<!-- ─── BOOKING STRIP ─── -->
+<section class="booking-strip" aria-label="Consultar disponibilidad">
+  <div class="container">
+    <div class="booking-bar" role="search">
+      <div>
+        <p class="booking-bar-titulo">Disponibilidad</p>
+        <p class="booking-bar-label">¿Cuándo venís?</p>
+      </div>
+      <div class="booking-fields">
         <div class="booking-field">
           <label for="checkin">Llegada</label>
           <input type="date" id="checkin" name="checkin">
@@ -1086,8 +1151,6 @@
           <label for="checkout">Salida</label>
           <input type="date" id="checkout" name="checkout">
         </div>
-      </div>
-      <div class="booking-row">
         <div class="booking-field">
           <label for="personas">Personas</label>
           <select id="personas" name="personas">
@@ -1109,26 +1172,9 @@
           </select>
         </div>
       </div>
-      <button class="booking-btn" onclick="scrollToContact()">Consultar por WhatsApp →</button>
+      <button class="booking-btn" type="button" onclick="scrollToContact()">Consultar por WhatsApp →</button>
     </div>
   </div>
-
-  <!-- DERECHA: grid de fotos contenidas -->
-  <div class="hero-der">
-    <div class="hero-foto hero-foto-grande">
-      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home1.jpg" alt="Complejo Baden Baden — piscinas y naturaleza">
-      <span class="hero-foto-badge">🏊 Piscinas y toboganes</span>
-    </div>
-    <div class="hero-foto">
-      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/cabanas.jpg" alt="Cabañas Baden Baden">
-      <span class="hero-foto-badge">🏡 Cabañas</span>
-    </div>
-    <div class="hero-foto">
-      <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/home3.jpg" alt="Selva misionera Baden Baden">
-      <span class="hero-foto-badge">🌿 Selva misionera</span>
-    </div>
-  </div>
-
 </section>
 
 <!-- ─── STATS ─── -->
@@ -1496,8 +1542,8 @@
       <div class="aloj-card">
         <div class="aloj-foto">
           <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/tipo-hotel-300x300.jpg" alt="Habitación Estándar" loading="lazy">
-          <span class="aloj-precio-badge">$75.000/noche</span>
-          <span class="aloj-cap-badge">👤 1-2 personas</span>
+          <span class="aloj-precio-badge">$70.000/noche</span>
+          <span class="aloj-cap-badge">👥 4 personas</span>
         </div>
         <div class="aloj-body">
           <p class="aloj-tipo">Habitación tipo Hotel — Estándar</p>
@@ -1520,8 +1566,8 @@
       <div class="aloj-card">
         <div class="aloj-foto">
           <img src="https://complejobadenbaden.com.ar/wp-content/uploads/2023/12/hotel-frigobar-300x300.jpg" alt="Habitación Superior" loading="lazy">
-          <span class="aloj-precio-badge">$85.000/noche</span>
-          <span class="aloj-cap-badge">👥 1-2 personas</span>
+          <span class="aloj-precio-badge">$80.000/noche</span>
+          <span class="aloj-cap-badge">👥 4 personas</span>
         </div>
         <div class="aloj-body">
           <p class="aloj-tipo">Habitación tipo Hotel — Superior</p>
@@ -2195,7 +2241,7 @@
               <div class="contacto-item-val">(03743) 482-081 / 482-083</div>
             </div>
           </a>
-          <a href="mailto:hola@complejobadenbaden.com.ar" class="contacto-item" style="text-decoration:none;">
+          <a href="mailto:campingbaden@yahoo.com.ar" class="contacto-item" style="text-decoration:none;">
             <span class="contacto-ico">✉️</span>
             <div class="contacto-item-body">
               <div class="contacto-item-label">Email</div>
@@ -2295,7 +2341,7 @@
         <ul>
           <li><a href="#alojamientos">Cabañas (14 opciones)</a></li>
           <li><a href="#alojamientos">Departamentos (3)</a></li>
-          <li><a href="#alojamientos">Habitaciones hotel (10)</a></li>
+          <li><a href="#alojamientos">Habitaciones hotel (7)</a></li>
           <li><a href="#alojamientos">Albergue grupal (2)</a></li>
         </ul>
       </div>
@@ -2315,14 +2361,14 @@
         <ul>
           <li><a href="tel:+543743482081">(03743) 482-081</a></li>
           <li><a href="tel:+543743482083">(03743) 482-083</a></li>
-          <li><a href="mailto:hola@complejobadenbaden.com.ar">hola@complejobadenbaden.com.ar</a></li>
+          <li><a href="mailto:campingbaden@yahoo.com.ar">campingbaden@yahoo.com.ar</a></li>
           <li><a href="https://wa.me/+5493743482081" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Complejo Turístico Baden Baden · Jardín América, Misiones, Argentina</span>
+      <span>© 2026 Complejo Turístico Baden Baden · Jardín América, Misiones, Argentina</span>
       <span>Diseñado por <a href="#">Selva.tic</a></span>
     </div>
   </div>
@@ -2513,10 +2559,17 @@
   // Inicializar calculadora
   calcUpdateOpciones();
 
-  // Modal promo 3x2
+  // Modal promo 3x2 — se muestra al hacer scroll (~45%) o a los 12s, una sola vez por sesión
   const modalPromo = document.getElementById('modalPromo');
   function cerrarModal() {
     modalPromo.classList.remove('visible');
+    try { sessionStorage.setItem('bb-promo-seen', '1'); } catch (e) {}
+  }
+  function mostrarModalPromo() {
+    try {
+      if (sessionStorage.getItem('bb-promo-seen')) return;
+    } catch (e) {}
+    modalPromo.classList.add('visible');
   }
   modalPromo.addEventListener('click', function(e) {
     if (e.target === modalPromo) cerrarModal();
@@ -2524,9 +2577,22 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') cerrarModal();
   });
-  window.addEventListener('load', function() {
-    setTimeout(() => modalPromo.classList.add('visible'), 600);
-  });
+  (function initPromoModal() {
+    let shown = false;
+    function tryShow() {
+      if (shown) return;
+      shown = true;
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+      mostrarModalPromo();
+    }
+    function onScroll() {
+      const scrolled = window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      if (scrolled >= 0.45) tryShow();
+    }
+    const timer = setTimeout(tryShow, 12000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
 
   // Navbar scroll
   const navbar = document.getElementById('navbar');
@@ -2560,8 +2626,37 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // Scroll to contact
+  // Scroll to contact (y pasa fechas del booking strip al formulario)
   function scrollToContact() {
+    const checkin = document.getElementById('checkin');
+    const checkout = document.getElementById('checkout');
+    const personas = document.getElementById('personas');
+    const tipo = document.getElementById('tipo-aloj');
+    const fCheckin = document.getElementById('f-checkin');
+    const fCheckout = document.getElementById('f-checkout');
+    const fTipo = document.getElementById('f-tipo');
+    const fPersonas = document.getElementById('f-personas');
+    if (checkin && fCheckin && checkin.value) fCheckin.value = checkin.value;
+    if (checkout && fCheckout && checkout.value) fCheckout.value = checkout.value;
+    if (tipo && fTipo) {
+      const map = {
+        'Cabaña': 'Cabaña',
+        'Departamento': 'Departamento',
+        'Habitación hotel': 'Habitación hotel',
+        'Albergue': 'Albergue grupal'
+      };
+      if (map[tipo.value]) fTipo.value = map[tipo.value];
+    }
+    if (personas && fPersonas) {
+      const mapPers = {
+        '1 persona': '1–2 personas',
+        '2 personas': '1–2 personas',
+        '3 personas': '3–4 personas',
+        '4 personas': '3–4 personas',
+        '5+ personas': '5–6 personas'
+      };
+      if (mapPers[personas.value]) fPersonas.value = mapPers[personas.value];
+    }
     document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
   }
 
